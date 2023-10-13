@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A31EDAA2AD9537100430AFC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A31EDA92AD9537100430AFC /* RxSwift */; };
 		5A5D2FA22AD6DFF1003CAF22 /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FA12AD6DFF1003CAF22 /* DiscoverViewModel.swift */; };
 		5A5D2FA42AD6E00E003CAF22 /* BasketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FA32AD6E00E003CAF22 /* BasketsViewModel.swift */; };
 		5A5D2FA62AD6E021003CAF22 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FA52AD6E021003CAF22 /* FavoritesViewModel.swift */; };
-		5A5D2FA82AD74399003CAF22 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FA72AD74399003CAF22 /* File.swift */; };
-		5A5D2FAA2AD743A4003CAF22 /* 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FA92AD743A4003CAF22 /* 2.swift */; };
+		5A5D2FA82AD74399003CAF22 /* Yemekler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FA72AD74399003CAF22 /* Yemekler.swift */; };
+		5A5D2FAC2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FAB2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift */; };
+		5A5D2FAF2AD861D2003CAF22 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5D2FAE2AD861D2003CAF22 /* Kingfisher */; };
+		5A5D2FB12AD86794003CAF22 /* YemeklerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FB02AD86794003CAF22 /* YemeklerCevap.swift */; };
+		5A5D2FB32AD86842003CAF22 /* YemeklerDaoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FB22AD86842003CAF22 /* YemeklerDaoRepository.swift */; };
+		5A5D2FB62AD8687E003CAF22 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5D2FB52AD8687E003CAF22 /* Alamofire */; };
 		5A79D51B2AD6C44200C83B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79D51A2AD6C44200C83B06 /* AppDelegate.swift */; };
 		5A79D51D2AD6C44200C83B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79D51C2AD6C44200C83B06 /* SceneDelegate.swift */; };
 		5A79D51F2AD6C44200C83B06 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79D51E2AD6C44200C83B06 /* DiscoverVC.swift */; };
@@ -27,8 +32,10 @@
 		5A5D2FA12AD6DFF1003CAF22 /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
 		5A5D2FA32AD6E00E003CAF22 /* BasketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketsViewModel.swift; sourceTree = "<group>"; };
 		5A5D2FA52AD6E021003CAF22 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
-		5A5D2FA72AD74399003CAF22 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		5A5D2FA92AD743A4003CAF22 /* 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2.swift; sourceTree = "<group>"; };
+		5A5D2FA72AD74399003CAF22 /* Yemekler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yemekler.swift; sourceTree = "<group>"; };
+		5A5D2FAB2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerCollectionViewCell.swift; sourceTree = "<group>"; };
+		5A5D2FB02AD86794003CAF22 /* YemeklerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerCevap.swift; sourceTree = "<group>"; };
+		5A5D2FB22AD86842003CAF22 /* YemeklerDaoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerDaoRepository.swift; sourceTree = "<group>"; };
 		5A79D5172AD6C44200C83B06 /* Food Delivery App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Delivery App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A79D51A2AD6C44200C83B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A79D51C2AD6C44200C83B06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A31EDAA2AD9537100430AFC /* RxSwift in Frameworks */,
+				5A5D2FAF2AD861D2003CAF22 /* Kingfisher in Frameworks */,
+				5A5D2FB62AD8687E003CAF22 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +84,6 @@
 			children = (
 				5A79D51A2AD6C44200C83B06 /* AppDelegate.swift */,
 				5A79D51C2AD6C44200C83B06 /* SceneDelegate.swift */,
-				5A79D5202AD6C44200C83B06 /* Main.storyboard */,
 				5A79D5232AD6C44300C83B06 /* Assets.xcassets */,
 				5A79D5342AD6C78100C83B06 /* View */,
 				5A79D52E2AD6C71300C83B06 /* Data */,
@@ -87,8 +96,9 @@
 		5A79D52E2AD6C71300C83B06 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				5A5D2FA72AD74399003CAF22 /* File.swift */,
-				5A5D2FA92AD743A4003CAF22 /* 2.swift */,
+				5A5D2FA72AD74399003CAF22 /* Yemekler.swift */,
+				5A5D2FB02AD86794003CAF22 /* YemeklerCevap.swift */,
+				5A5D2FB22AD86842003CAF22 /* YemeklerDaoRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -107,8 +117,10 @@
 		5A79D5352AD6C78900C83B06 /* Discover View */ = {
 			isa = PBXGroup;
 			children = (
+				5A79D5202AD6C44200C83B06 /* Main.storyboard */,
 				5A79D51E2AD6C44200C83B06 /* DiscoverVC.swift */,
 				5A5D2FA12AD6DFF1003CAF22 /* DiscoverViewModel.swift */,
+				5A5D2FAB2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift */,
 			);
 			path = "Discover View";
 			sourceTree = "<group>";
@@ -155,6 +167,11 @@
 			dependencies = (
 			);
 			name = "Food Delivery App";
+			packageProductDependencies = (
+				5A5D2FAE2AD861D2003CAF22 /* Kingfisher */,
+				5A5D2FB52AD8687E003CAF22 /* Alamofire */,
+				5A31EDA92AD9537100430AFC /* RxSwift */,
+			);
 			productName = "Food Delivery App";
 			productReference = 5A79D5172AD6C44200C83B06 /* Food Delivery App.app */;
 			productType = "com.apple.product-type.application";
@@ -183,6 +200,11 @@
 				Base,
 			);
 			mainGroup = 5A79D50E2AD6C44200C83B06;
+			packageReferences = (
+				5A5D2FAD2AD861D2003CAF22 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5A5D2FB42AD8687E003CAF22 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5A31EDA82AD9537100430AFC /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 5A79D5182AD6C44200C83B06 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -212,15 +234,17 @@
 			files = (
 				5A5D2FA62AD6E021003CAF22 /* FavoritesViewModel.swift in Sources */,
 				5A79D5402AD6C8A600C83B06 /* BasketsVC.swift in Sources */,
+				5A5D2FB32AD86842003CAF22 /* YemeklerDaoRepository.swift in Sources */,
 				5A5D2FA42AD6E00E003CAF22 /* BasketsViewModel.swift in Sources */,
 				5A79D51F2AD6C44200C83B06 /* DiscoverVC.swift in Sources */,
 				5A79D51B2AD6C44200C83B06 /* AppDelegate.swift in Sources */,
-				5A5D2FA82AD74399003CAF22 /* File.swift in Sources */,
+				5A5D2FA82AD74399003CAF22 /* Yemekler.swift in Sources */,
 				5A79D51D2AD6C44200C83B06 /* SceneDelegate.swift in Sources */,
 				5A5D2FA22AD6DFF1003CAF22 /* DiscoverViewModel.swift in Sources */,
 				5A79D53E2AD6C87200C83B06 /* FavoritesVC.swift in Sources */,
-				5A5D2FAA2AD743A4003CAF22 /* 2.swift in Sources */,
 				5A79D53C2AD6C85C00C83B06 /* OrdersVC.swift in Sources */,
+				5A5D2FAC2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift in Sources */,
+				5A5D2FB12AD86794003CAF22 /* YemeklerCevap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +460,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A31EDA82AD9537100430AFC /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		5A5D2FAD2AD861D2003CAF22 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		5A5D2FB42AD8687E003CAF22 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A31EDA92AD9537100430AFC /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A31EDA82AD9537100430AFC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		5A5D2FAE2AD861D2003CAF22 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A5D2FAD2AD861D2003CAF22 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		5A5D2FB52AD8687E003CAF22 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A5D2FB42AD8687E003CAF22 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A79D50F2AD6C44200C83B06 /* Project object */;
 }

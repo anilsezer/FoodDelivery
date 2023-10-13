@@ -6,7 +6,17 @@
 //
 
 import Foundation
+import RxSwift
 
 class DiscoverViewModel {
+    
+    var yemeklerRepo = YemeklerDaoRepository()
+
+    func yemekleriGetir(completion: @escaping([Yemekler]? )-> Void ) {
+        yemeklerRepo.yemekleriGetir{ yemekler in
+            completion(yemekler)
+            
+        }
+    }
     
 }
