@@ -26,22 +26,30 @@ class DiscoverVC: UIViewController {
         yemeklerCollectionView.backgroundColor = .red
         
         let layout = UICollectionViewFlowLayout()
-           layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 20, right: 10)
-           layout.minimumInteritemSpacing = 10
-           layout.minimumLineSpacing = 10
-           layout.scrollDirection = .vertical
-           
-           let cellWidth = (yemeklerCollectionView.frame.width - 30) / 2
-           layout.itemSize = CGSize(width: cellWidth, height: 200)
-           
-           yemeklerCollectionView.collectionViewLayout = layout
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 20, right: 10)
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
+        layout.scrollDirection = .vertical
+        
+        let cellWidth = (yemeklerCollectionView.frame.width - 30) / 2
+        layout.itemSize = CGSize(width: cellWidth, height: 200)
+        
+        yemeklerCollectionView.collectionViewLayout = layout
         
     }
     override func viewWillAppear(_ animated: Bool) {
         viewModel.yemekleriGetir { yemekler in
             self.yemekler = yemekler!
         }
-        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailPage" {
+            if let yemek = sender as? Yemekler {
+                let destinationVC = segue.destination as! DetailPageVC
+                destinationVC.yemek = yemek
+            }
+        }
+
     }
 }
 
@@ -63,6 +71,11 @@ extension DiscoverVC: UICollectionViewDelegate, UICollectionViewDataSource {
             }
         }
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let yemek = yemekler[indexPath.row]
+        
+        performSegue(withIdentifier: "toDetailPage", sender: yemek)
     }
 }
 

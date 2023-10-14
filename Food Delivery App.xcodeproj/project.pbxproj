@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1EA4E12ADAC554001415B4 /* DetailPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1EA4E02ADAC554001415B4 /* DetailPageVC.swift */; };
 		5A31EDAA2AD9537100430AFC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A31EDA92AD9537100430AFC /* RxSwift */; };
 		5A5D2FA22AD6DFF1003CAF22 /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FA12AD6DFF1003CAF22 /* DiscoverViewModel.swift */; };
 		5A5D2FA42AD6E00E003CAF22 /* BasketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FA32AD6E00E003CAF22 /* BasketsViewModel.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A1EA4E02ADAC554001415B4 /* DetailPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageVC.swift; sourceTree = "<group>"; };
 		5A5D2FA12AD6DFF1003CAF22 /* DiscoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewModel.swift; sourceTree = "<group>"; };
 		5A5D2FA32AD6E00E003CAF22 /* BasketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketsViewModel.swift; sourceTree = "<group>"; };
 		5A5D2FA52AD6E021003CAF22 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A1EA4DF2ADAC52A001415B4 /* Detail Page View */ = {
+			isa = PBXGroup;
+			children = (
+				5A1EA4E02ADAC554001415B4 /* DetailPageVC.swift */,
+			);
+			path = "Detail Page View";
+			sourceTree = "<group>";
+		};
 		5A79D50E2AD6C44200C83B06 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 				5A79D51C2AD6C44200C83B06 /* SceneDelegate.swift */,
 				5A79D5232AD6C44300C83B06 /* Assets.xcassets */,
 				5A79D5342AD6C78100C83B06 /* View */,
+				5A1EA4DF2ADAC52A001415B4 /* Detail Page View */,
 				5A79D52E2AD6C71300C83B06 /* Data */,
 				5A79D5252AD6C44300C83B06 /* LaunchScreen.storyboard */,
 				5A79D5282AD6C44300C83B06 /* Info.plist */,
@@ -236,6 +247,7 @@
 				5A79D5402AD6C8A600C83B06 /* BasketsVC.swift in Sources */,
 				5A5D2FB32AD86842003CAF22 /* YemeklerDaoRepository.swift in Sources */,
 				5A5D2FA42AD6E00E003CAF22 /* BasketsViewModel.swift in Sources */,
+				5A1EA4E12ADAC554001415B4 /* DetailPageVC.swift in Sources */,
 				5A79D51F2AD6C44200C83B06 /* DiscoverVC.swift in Sources */,
 				5A79D51B2AD6C44200C83B06 /* AppDelegate.swift in Sources */,
 				5A5D2FA82AD74399003CAF22 /* Yemekler.swift in Sources */,
