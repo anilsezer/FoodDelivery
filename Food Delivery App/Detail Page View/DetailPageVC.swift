@@ -19,6 +19,9 @@ class DetailPageVC: UIViewController {
     
     var yemek: Yemekler?
     var count = 1
+    
+    var viewModel = DetailPageViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +36,7 @@ class DetailPageVC: UIViewController {
             }
         }
         updateCountLabel()
+        updateTutarLabel()
     }
     
     @IBAction func plusButton(_ sender: Any) {
@@ -44,6 +48,9 @@ class DetailPageVC: UIViewController {
     }
     
     @IBAction func addBasketButton(_ sender: Any) {
+        guard let yemek = yemek else { return }
+        var kullaniciAdi = "KullaniciAdi" 
+        viewModel.sepeteEkleTapped(yemek: yemek, adet: count, kullaniciAdi: kullaniciAdi)
         
     }
     private func plusButtonTapped() {
@@ -58,7 +65,7 @@ class DetailPageVC: UIViewController {
         if count > 1 {
             count -= 1
             updateCountLabel()
-            updateTutarLabel() 
+            updateTutarLabel()
         }
     }
     private func updateCountLabel() {
@@ -70,11 +77,10 @@ class DetailPageVC: UIViewController {
             
             if let price = Int(cleanedPriceText) {
                 let total = count * price
-                totalPriceLabel.text = "\(total)"
+                totalPriceLabel.text = "\(total) ₺"
             } else {
                 totalPriceLabel.text = ""
             }
         }
-        
     }
 }
