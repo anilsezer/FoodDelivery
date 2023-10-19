@@ -22,12 +22,4 @@ class BasketTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    @IBAction func minusButton(_ sender: Any) {
-        
-    }
-    
-    @IBAction func plusButton(_ sender: Any) {
-        
-    }
-    
 }
