@@ -12,7 +12,7 @@ class BasketsViewModel {
     
     var sepetYemekListesi = [YemeklerDetay]()
     
-    func sepetiGetir(kullaniciAdi: String, completion: @escaping () -> Void) {
+    func sepetiGetir(kullaniciAdi: String) {
         let params: Parameters = ["kullanici_adi": kullaniciAdi]
         AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php", method: .post, parameters: params).response { response in
             
@@ -22,12 +22,10 @@ class BasketsViewModel {
                     if let list = response.sepet_yemekler {
                         DispatchQueue.main.async {
                             self.sepetYemekListesi = list
-                            completion()
                         }
                     }
                 } catch {
                     print(error.localizedDescription)
-                    completion()
                 }
             }
         }

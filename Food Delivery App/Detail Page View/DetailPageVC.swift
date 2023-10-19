@@ -48,9 +48,15 @@ class DetailPageVC: UIViewController {
     }
     
     @IBAction func addBasketButton(_ sender: Any) {
-        guard let yemek = yemek else { return }
-        var kullaniciAdi = "KullaniciAdi" 
-        viewModel.sepeteEkleTapped(yemek: yemek, adet: count, kullaniciAdi: kullaniciAdi)
+        if let yemek = yemek {
+            
+            var kullaniciAdi = "kullaniciAdi"
+            viewModel.sepeteEkleTapped(yemek_adi: yemek.yemek_adi!, yemek_resim_adi: yemek.yemek_resim_adi!, yemek_fiyat: yemek.yemek_fiyat!, yemek_siparis_adet: count, kullanici_adi: kullaniciAdi)
+            viewModel.sepetiGetir(kullaniciAdi: kullaniciAdi) {
+                BasketsVC().viewModel.sepetYemekListesi = self.viewModel.sepetYemekListesi
+            }
+        }
+        
         
     }
     private func plusButtonTapped() {

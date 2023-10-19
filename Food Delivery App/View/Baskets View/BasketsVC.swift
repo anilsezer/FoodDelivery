@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class BasketsVC: UIViewController {
 
     @IBOutlet weak var basketTableView: UITableView?
@@ -23,9 +23,8 @@ class BasketsVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         basketTableView?.reloadData()
+        viewModel.sepetiGetir(kullaniciAdi: "kullaniciAdi")
     }
-
-
 
 }
 extension BasketsVC : UITableViewDelegate, UITableViewDataSource {
