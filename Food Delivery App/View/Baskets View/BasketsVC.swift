@@ -21,8 +21,9 @@ class BasketsVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.sepetiGetir(kullaniciAdi: "kullaniciAdi")
-        basketTableView?.reloadData()
+        viewModel.sepetiGetir(kullaniciAdi: "kullaniciAdi") { [weak self] in
+            self?.basketTableView?.reloadData()
+        }
     }
 }
 
@@ -56,7 +57,11 @@ extension BasketsVC : UITableViewDelegate, UITableViewDataSource {
             alert.addAction(cancelAction)
             
             let deleteAction = UIAlertAction(title: "Evet", style: .destructive) { _ in
-                self.viewModel.yemegiSil(sepet_yemek_id: Int(food.sepet_yemek_id!)!, kullanici_adi: "kullaniciAdi")
+                self.viewModel.yemegiSil(sepet_yemek_id: Int(food.sepet_yemek_id!)!, kullanici_adi: "kullaniciAdi") {
+                    self.viewModel.sepetiGetir(kullaniciAdi: "kullaniciAdi") {
+                        self.basketTableView?.reloadData()
+                    }
+                }
             }
             alert.addAction(deleteAction)
             self.present(alert, animated: true)

@@ -18,5 +18,8 @@ class DiscoverViewModel {
             
         }
     }
+    func searchFood() {
+        
+    }
     
 }

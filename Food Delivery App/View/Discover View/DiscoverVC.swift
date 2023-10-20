@@ -7,11 +7,12 @@
 
 import UIKit
 import Kingfisher
-import RxSwift
+
 class DiscoverVC: UIViewController {
     
     @IBOutlet weak var yemeklerCollectionView: UICollectionView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
     var yemekler = [Yemekler]() {
         didSet {
             yemeklerCollectionView.reloadData()
@@ -49,7 +50,6 @@ class DiscoverVC: UIViewController {
                 destinationVC.yemek = yemek
             }
         }
-
     }
 }
 

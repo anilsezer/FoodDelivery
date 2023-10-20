@@ -17,8 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="aKd-bM-mLy">
+                                <rect key="frame" x="0.0" y="103" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mgE-os-0kV"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Svb-ER-ooB" id="f9m-gh-83X"/>
+                                </connections>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n8r-nK-Lbt">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="147" width="393" height="622"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D5E-vL-J1g">
                                     <size key="itemSize" width="150" height="188"/>
@@ -93,20 +103,25 @@
                         <viewLayoutGuide key="safeArea" id="HPx-D0-3iz"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
+                            <constraint firstItem="n8r-nK-Lbt" firstAttribute="top" secondItem="aKd-bM-mLy" secondAttribute="bottom" id="6mP-cf-Viy"/>
+                            <constraint firstItem="aKd-bM-mLy" firstAttribute="top" secondItem="HPx-D0-3iz" secondAttribute="top" id="Bqt-vQ-z3Q"/>
                             <constraint firstItem="HPx-D0-3iz" firstAttribute="bottom" secondItem="n8r-nK-Lbt" secondAttribute="bottom" id="JVo-Z1-Nds"/>
                             <constraint firstItem="n8r-nK-Lbt" firstAttribute="leading" secondItem="HPx-D0-3iz" secondAttribute="leading" id="Llz-Mb-55p"/>
-                            <constraint firstItem="n8r-nK-Lbt" firstAttribute="top" secondItem="HPx-D0-3iz" secondAttribute="top" id="dKD-K8-wOI"/>
+                            <constraint firstItem="aKd-bM-mLy" firstAttribute="leading" secondItem="HPx-D0-3iz" secondAttribute="leading" id="TWz-li-oAQ"/>
+                            <constraint firstItem="aKd-bM-mLy" firstAttribute="top" secondItem="HPx-D0-3iz" secondAttribute="top" id="dKD-K8-wOI"/>
+                            <constraint firstItem="aKd-bM-mLy" firstAttribute="trailing" secondItem="HPx-D0-3iz" secondAttribute="trailing" id="geY-ee-lM3"/>
                             <constraint firstItem="HPx-D0-3iz" firstAttribute="trailing" secondItem="n8r-nK-Lbt" secondAttribute="trailing" id="mgh-gp-WWH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Keşfet" id="dmf-4h-UCh"/>
                     <connections>
+                        <outlet property="searchBar" destination="aKd-bM-mLy" id="Bpi-BB-LcO"/>
                         <outlet property="yemeklerCollectionView" destination="n8r-nK-Lbt" id="sAZ-Pk-eft"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2f-PQ-W5Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-721" y="-880"/>
+            <point key="canvasLocation" x="-721.37404580152668" y="-880.28169014084517"/>
         </scene>
         <!--Ürün Detayı-->
         <scene sceneID="0gM-i0-TS4">
@@ -260,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fQ4-Zc-Q8q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="-880"/>
+            <point key="canvasLocation" x="-721" y="-168"/>
         </scene>
         <!--Item-->
         <scene sceneID="K1b-sT-oRB">
@@ -383,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSf-hi-MqA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-808.39694656488541" y="567.6056338028169"/>
+            <point key="canvasLocation" x="-721" y="568"/>
         </scene>
         <!--Sipariş-->
         <scene sceneID="gqf-Tt-6F6">
@@ -399,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5g-Fa-aTB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1978" y="-168"/>
+            <point key="canvasLocation" x="91" y="-168"/>
         </scene>
         <!--Keşfet-->
         <scene sceneID="ACu-6f-XWp">
