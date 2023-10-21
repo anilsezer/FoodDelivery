@@ -11,6 +11,7 @@ class BasketsVC: UIViewController {
     
     @IBOutlet weak var basketTableView: UITableView?
     
+    @IBOutlet weak var productInfoLabel: UILabel!
     var viewModel = BasketsViewModel()
     
     override func viewDidLoad() {
@@ -23,6 +24,15 @@ class BasketsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         viewModel.sepetiGetir(kullaniciAdi: "kullaniciAdi") { [weak self] in
             self?.basketTableView?.reloadData()
+            self?.isBasketEmpty()
+        }
+    }
+    func isBasketEmpty() {
+        if viewModel.sepetYemekListesi.isEmpty {
+            viewModel.sepetYemekListesi.removeAll()
+            productInfoLabel?.isHidden = false
+        } else {
+            productInfoLabel?.isHidden = true
         }
     }
 }

@@ -16,6 +16,7 @@ class DiscoverVC: UIViewController {
     var yemekler = [Yemekler]() {
         didSet {
             yemeklerCollectionView.reloadData()
+            viewModel.tamListe = yemekler
         }
         
     }
@@ -36,6 +37,7 @@ class DiscoverVC: UIViewController {
         layout.itemSize = CGSize(width: cellWidth, height: 200)
         
         yemeklerCollectionView.collectionViewLayout = layout
+        searchBar.delegate = self
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -79,3 +81,15 @@ extension DiscoverVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 }
 
+extension DiscoverVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" || searchText.count < 3 {
+            viewModel.yemekleriGetir { yemekler in
+                self.yemekler = yemekler!
+            }
+        }else {
+            print(viewModel.ara(aramaKelimesi: searchText))
+            self.yemekler = viewModel.ara(aramaKelimesi: searchText)
+        }
+    }
+}

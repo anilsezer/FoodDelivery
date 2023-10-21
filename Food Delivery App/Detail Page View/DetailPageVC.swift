@@ -39,6 +39,10 @@ class DetailPageVC: UIViewController {
         updateTutarLabel()
     }
     
+    @IBAction func addFavoriteButton(_ sender: Any) {
+        viewModel.addToFavorites(yemek!)
+        
+    }
     @IBAction func plusButton(_ sender: Any) {
         plusButtonTapped()
     }
@@ -48,16 +52,48 @@ class DetailPageVC: UIViewController {
     }
     
     @IBAction func addBasketButton(_ sender: Any) {
-        if let yemek = yemek {
+        // MARK: - İlk Hali
+        //        if let yemek = yemek {
+        //
+        //            let kullaniciAdi = "kullaniciAdi"
+        //            viewModel.sepeteEkleTapped(yemek_adi: yemek.yemek_adi!, yemek_resim_adi: yemek.yemek_resim_adi!, yemek_fiyat: yemek.yemek_fiyat!, yemek_siparis_adet: count, kullanici_adi: kullaniciAdi)
+        //            viewModel.sepetiGetir(kullaniciAdi: kullaniciAdi) {
+        //                BasketsVC().viewModel.sepetYemekListesi = self.viewModel.sepetYemekListesi
+        //            }
+        //        }
+        // MARK: - İkinci Hali
+        
+        //        if let yemek = yemek {
+        //            var toplam = count
+        //            let kullaniciAdi = "kullaniciAdi"
+        //            if let sonYemek = viewModel.sepetYemekListesi.first(where: {$0.yemek_adi! == yemek.yemek_adi!}) {
+        //                viewModel.yemegiSil(sepet_yemek_id: Int(sonYemek.sepet_yemek_id!)!, kullanici_adi: kullaniciAdi)
+        //                toplam = Int(sonYemek.yemek_siparis_adet!)! + count
+        //                viewModel.sepetiGetir(kullaniciAdi: kullaniciAdi) {
+        //                    BasketsVC().viewModel.sepetYemekListesi = self.viewModel.sepetYemekListesi
+        //                }
+        //            }
+        //            viewModel.sepeteEkleTapped(yemek_adi: yemek.yemek_adi!, yemek_resim_adi: yemek.yemek_resim_adi!, yemek_fiyat: yemek.yemek_fiyat!, yemek_siparis_adet: toplam, kullanici_adi: kullaniciAdi)
+        //            viewModel.sepetiGetir(kullaniciAdi: kullaniciAdi) {
+        //                BasketsVC().viewModel.sepetYemekListesi = self.viewModel.sepetYemekListesi
+        //            }
+        //        }
+        if  let yemek = yemek {
+            let kullaniciAdi = "kullaniciAdi"
+            var toplam = count
+            if let sonYemek = viewModel.sepetYemekListesi.first(where: { $0.yemek_adi == yemek.yemek_adi }) {
+                toplam += Int(sonYemek.yemek_siparis_adet!)!
+                viewModel.yemegiSil(sepet_yemek_id: Int(sonYemek.sepet_yemek_id!)!, kullanici_adi: kullaniciAdi)
+                self.viewModel.sepetiGetir(kullaniciAdi: kullaniciAdi) {
+                    BasketsVC().viewModel.sepetYemekListesi = self.viewModel.sepetYemekListesi
+                }
+            }
             
-            var kullaniciAdi = "kullaniciAdi"
-            viewModel.sepeteEkleTapped(yemek_adi: yemek.yemek_adi!, yemek_resim_adi: yemek.yemek_resim_adi!, yemek_fiyat: yemek.yemek_fiyat!, yemek_siparis_adet: count, kullanici_adi: kullaniciAdi)
+            viewModel.sepeteEkleTapped(yemek_adi: yemek.yemek_adi!, yemek_resim_adi: yemek.yemek_resim_adi!, yemek_fiyat: yemek.yemek_fiyat!, yemek_siparis_adet: toplam, kullanici_adi: kullaniciAdi)
             viewModel.sepetiGetir(kullaniciAdi: kullaniciAdi) {
                 BasketsVC().viewModel.sepetYemekListesi = self.viewModel.sepetYemekListesi
             }
         }
-        
-        
     }
     private func plusButtonTapped() {
         if count < 8 {
