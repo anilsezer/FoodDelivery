@@ -11,12 +11,12 @@ import Alamofire
 class DiscoverViewModel {
     
     var tamListe = [Yemekler]()
-
+    
     func ara(aramaKelimesi: String) -> [Yemekler] {
         var aramaListesi = [Yemekler]()
         aramaListesi = tamListe.filter({
             $0.yemek_adi!.lowercased().contains(aramaKelimesi.lowercased())
-           
+            
         })
         return aramaListesi
     }

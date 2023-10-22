@@ -12,7 +12,6 @@ class FavoritesVC: UIViewController {
     let viewModel = FavoritesViewModel()
     
     @IBOutlet weak var anyFavoritesInfoLabel: UILabel!
-    
     @IBOutlet weak var favoritesTableView: UITableView!
     
     override func viewDidLoad() {
@@ -31,9 +30,8 @@ class FavoritesVC: UIViewController {
     func isFavoritesEmty() {
         anyFavoritesInfoLabel.isHidden = viewModel.fetchFavorites().isEmpty ? false : true
     }
-
-
 }
+
 extension FavoritesVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.fetchFavorites().count
@@ -51,9 +49,9 @@ extension FavoritesVC : UITableViewDelegate, UITableViewDataSource {
                 cell.foodImage.kf.setImage(with: url)
             }
         }
-        
         return cell
     }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Sil") { (action, view, completion) in
             let food = self.viewModel.fetchFavorites()[indexPath.row]

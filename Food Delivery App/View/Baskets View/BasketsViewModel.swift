@@ -23,7 +23,7 @@ class BasketsViewModel {
                         self.sepetYemekListesi = list
                         completion() // Verileri aldıktan sonra tamamlandı bildir
                     }
-
+                    
                 } catch {
                     print(error.localizedDescription)
                 }

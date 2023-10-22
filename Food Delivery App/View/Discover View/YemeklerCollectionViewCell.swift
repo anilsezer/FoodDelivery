@@ -10,9 +10,7 @@ import UIKit
 class YemeklerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var foodImage: UIImageView!
-    
     @IBOutlet weak var foodName: UILabel!
-    
     @IBOutlet weak var foodPrice: UILabel!
     
 }

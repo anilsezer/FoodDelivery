@@ -25,7 +25,4 @@ class YemeklerDetay : Codable {
         self.yemek_siparis_adet = yemek_siparis_adet
         self.kullanici_adi = kullanici_adi
     }
-    
-    
-    
 }

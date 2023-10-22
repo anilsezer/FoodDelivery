@@ -28,7 +28,6 @@ class FavoritesViewModel {
                 let newYemek = Yemekler(yemek_id: id, yemek_adi: name, yemek_resim_adi: image, yemek_fiyat: price)
                 yemekArr.append(newYemek)
             }
-            
         } catch  {
             print(error.localizedDescription)
         }
@@ -39,7 +38,7 @@ class FavoritesViewModel {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let context = delegate.persistentContainer.viewContext
         let fetchrequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorites")
-      
+        
         fetchrequest.predicate = NSPredicate(format: "id == %@", yemek.yemek_id!)
         fetchrequest.returnsObjectsAsFaults = false
         var yemekArr = [Yemekler]()
