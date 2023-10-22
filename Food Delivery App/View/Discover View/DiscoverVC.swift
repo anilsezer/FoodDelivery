@@ -25,7 +25,6 @@ class DiscoverVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        yemeklerCollectionView.backgroundColor = .red
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 20, right: 10)
@@ -62,11 +61,14 @@ extension DiscoverVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let yemek = yemekler[indexPath.row]
+        
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "YemeklerCollectionViewCell", for: indexPath) as! YemeklerCollectionViewCell
         cell.foodName.text = yemek.yemek_adi
         cell.foodPrice.text = "\(yemek.yemek_fiyat!) ₺"
-        cell.foodImage.backgroundColor = .darkGray
-        
+        cell.foodImage.backgroundColor = .white
+        cell.layer.borderColor = #colorLiteral(red: 0.9254901961, green: 0.9254901961, blue: 0.9254901961, alpha: 1)
+        cell.layer.borderWidth = 2
+//        cell.layer.cornerRadius = 15
         if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(yemek.yemek_resim_adi!)") {
             DispatchQueue.main.async {
                 cell.foodImage.kf.setImage(with: url)

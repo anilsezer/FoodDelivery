@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A0EA4D82AE28F3D005F700C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0EA4D72AE28F3D005F700C /* SnapKit */; };
 		5A1EA4E12ADAC554001415B4 /* DetailPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1EA4E02ADAC554001415B4 /* DetailPageVC.swift */; };
-		5A31EDAA2AD9537100430AFC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A31EDA92AD9537100430AFC /* RxSwift */; };
+		5A36B1902AE550FC002C910E /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36B18F2AE550FC002C910E /* UIView + Extension.swift */; };
 		5A37E2302AE41C620002AF9D /* FoodDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A37E22E2AE41C620002AF9D /* FoodDataModel.xcdatamodeld */; };
 		5A37E2322AE425C20002AF9D /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A37E2312AE425C20002AF9D /* FavoritesTableViewCell.swift */; };
 		5A4325682ADD701A00EE15B1 /* YemeklerDetay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4325672ADD701A00EE15B1 /* YemeklerDetay.swift */; };
@@ -22,7 +22,6 @@
 		5A5D2FAC2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FAB2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift */; };
 		5A5D2FAF2AD861D2003CAF22 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5D2FAE2AD861D2003CAF22 /* Kingfisher */; };
 		5A5D2FB12AD86794003CAF22 /* YemeklerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FB02AD86794003CAF22 /* YemeklerCevap.swift */; };
-		5A5D2FB32AD86842003CAF22 /* YemeklerDaoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FB22AD86842003CAF22 /* YemeklerDaoRepository.swift */; };
 		5A5D2FB62AD8687E003CAF22 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5D2FB52AD8687E003CAF22 /* Alamofire */; };
 		5A79D51B2AD6C44200C83B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79D51A2AD6C44200C83B06 /* AppDelegate.swift */; };
 		5A79D51D2AD6C44200C83B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79D51C2AD6C44200C83B06 /* SceneDelegate.swift */; };
@@ -38,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		5A1EA4E02ADAC554001415B4 /* DetailPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageVC.swift; sourceTree = "<group>"; };
+		5A36B18F2AE550FC002C910E /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		5A37E22F2AE41C620002AF9D /* FoodDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5A37E2312AE425C20002AF9D /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		5A4325672ADD701A00EE15B1 /* YemeklerDetay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerDetay.swift; sourceTree = "<group>"; };
@@ -49,7 +49,6 @@
 		5A5D2FA72AD74399003CAF22 /* Yemekler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yemekler.swift; sourceTree = "<group>"; };
 		5A5D2FAB2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerCollectionViewCell.swift; sourceTree = "<group>"; };
 		5A5D2FB02AD86794003CAF22 /* YemeklerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerCevap.swift; sourceTree = "<group>"; };
-		5A5D2FB22AD86842003CAF22 /* YemeklerDaoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerDaoRepository.swift; sourceTree = "<group>"; };
 		5A79D5172AD6C44200C83B06 /* Food Delivery App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Delivery App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A79D51A2AD6C44200C83B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A79D51C2AD6C44200C83B06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A31EDAA2AD9537100430AFC /* RxSwift in Frameworks */,
 				5A0EA4D82AE28F3D005F700C /* SnapKit in Frameworks */,
 				5A5D2FAF2AD861D2003CAF22 /* Kingfisher in Frameworks */,
 				5A5D2FB62AD8687E003CAF22 /* Alamofire in Frameworks */,
@@ -83,10 +81,18 @@
 			isa = PBXGroup;
 			children = (
 				5A1EA4E02ADAC554001415B4 /* DetailPageVC.swift */,
-				5A37E22E2AE41C620002AF9D /* FoodDataModel.xcdatamodeld */,
 				5A43256B2ADD740D00EE15B1 /* DetailPageViewModel.swift */,
+				5A37E22E2AE41C620002AF9D /* FoodDataModel.xcdatamodeld */,
 			);
 			path = "Detail Page View";
+			sourceTree = "<group>";
+		};
+		5A36B18E2AE550E4002C910E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5A36B18F2AE550FC002C910E /* UIView + Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		5A79D50E2AD6C44200C83B06 = {
@@ -112,7 +118,6 @@
 				5A79D51C2AD6C44200C83B06 /* SceneDelegate.swift */,
 				5A79D5232AD6C44300C83B06 /* Assets.xcassets */,
 				5A79D5342AD6C78100C83B06 /* View */,
-				5A1EA4DF2ADAC52A001415B4 /* Detail Page View */,
 				5A79D52E2AD6C71300C83B06 /* Data */,
 				5A79D5252AD6C44300C83B06 /* LaunchScreen.storyboard */,
 				5A79D5282AD6C44300C83B06 /* Info.plist */,
@@ -127,7 +132,6 @@
 				5A5D2FB02AD86794003CAF22 /* YemeklerCevap.swift */,
 				5A4325672ADD701A00EE15B1 /* YemeklerDetay.swift */,
 				5A4325692ADD702200EE15B1 /* YemeklerDetayCevap.swift */,
-				5A5D2FB22AD86842003CAF22 /* YemeklerDaoRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -135,10 +139,13 @@
 		5A79D5342AD6C78100C83B06 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5A79D5392AD6C80F00C83B06 /* Orders View */,
-				5A79D5372AD6C7C200C83B06 /* Favorites View */,
-				5A79D5362AD6C7B300C83B06 /* Baskets View */,
+				5A36B18E2AE550E4002C910E /* Extensions */,
+				5A79D5202AD6C44200C83B06 /* Main.storyboard */,
 				5A79D5352AD6C78900C83B06 /* Discover View */,
+				5A1EA4DF2ADAC52A001415B4 /* Detail Page View */,
+				5A79D5372AD6C7C200C83B06 /* Favorites View */,
+				5A79D5392AD6C80F00C83B06 /* Settings View */,
+				5A79D5362AD6C7B300C83B06 /* Baskets View */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,7 +153,6 @@
 		5A79D5352AD6C78900C83B06 /* Discover View */ = {
 			isa = PBXGroup;
 			children = (
-				5A79D5202AD6C44200C83B06 /* Main.storyboard */,
 				5A79D51E2AD6C44200C83B06 /* DiscoverVC.swift */,
 				5A5D2FA12AD6DFF1003CAF22 /* DiscoverViewModel.swift */,
 				5A5D2FAB2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift */,
@@ -174,12 +180,12 @@
 			path = "Favorites View";
 			sourceTree = "<group>";
 		};
-		5A79D5392AD6C80F00C83B06 /* Orders View */ = {
+		5A79D5392AD6C80F00C83B06 /* Settings View */ = {
 			isa = PBXGroup;
 			children = (
 				5A79D53B2AD6C85C00C83B06 /* SettingsVC.swift */,
 			);
-			path = "Orders View";
+			path = "Settings View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +207,6 @@
 			packageProductDependencies = (
 				5A5D2FAE2AD861D2003CAF22 /* Kingfisher */,
 				5A5D2FB52AD8687E003CAF22 /* Alamofire */,
-				5A31EDA92AD9537100430AFC /* RxSwift */,
 				5A0EA4D72AE28F3D005F700C /* SnapKit */,
 			);
 			productName = "Food Delivery App";
@@ -235,7 +240,6 @@
 			packageReferences = (
 				5A5D2FAD2AD861D2003CAF22 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				5A5D2FB42AD8687E003CAF22 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				5A31EDA82AD9537100430AFC /* XCRemoteSwiftPackageReference "RxSwift" */,
 				5A0EA4D62AE28F3D005F700C /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 5A79D5182AD6C44200C83B06 /* Products */;
@@ -267,13 +271,13 @@
 			files = (
 				5A5D2FA62AD6E021003CAF22 /* FavoritesViewModel.swift in Sources */,
 				5A79D5402AD6C8A600C83B06 /* BasketsVC.swift in Sources */,
-				5A5D2FB32AD86842003CAF22 /* YemeklerDaoRepository.swift in Sources */,
 				5A4325682ADD701A00EE15B1 /* YemeklerDetay.swift in Sources */,
 				5A5D2FA42AD6E00E003CAF22 /* BasketsViewModel.swift in Sources */,
 				5A37E2322AE425C20002AF9D /* FavoritesTableViewCell.swift in Sources */,
 				5A1EA4E12ADAC554001415B4 /* DetailPageVC.swift in Sources */,
 				5A43256A2ADD702200EE15B1 /* YemeklerDetayCevap.swift in Sources */,
 				5A79D51F2AD6C44200C83B06 /* DiscoverVC.swift in Sources */,
+				5A36B1902AE550FC002C910E /* UIView + Extension.swift in Sources */,
 				5A79D51B2AD6C44200C83B06 /* AppDelegate.swift in Sources */,
 				5A5D2FA82AD74399003CAF22 /* Yemekler.swift in Sources */,
 				5A79D51D2AD6C44200C83B06 /* SceneDelegate.swift in Sources */,
@@ -433,6 +437,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Food Delivery App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Food Delivery";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -460,6 +465,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Food Delivery App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Food Delivery";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -510,14 +516,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		5A31EDA82AD9537100430AFC /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 		5A5D2FAD2AD861D2003CAF22 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -541,11 +539,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A0EA4D62AE28F3D005F700C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		5A31EDA92AD9537100430AFC /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5A31EDA82AD9537100430AFC /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
 		};
 		5A5D2FAE2AD861D2003CAF22 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;

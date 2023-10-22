@@ -11,6 +11,8 @@ class FavoritesVC: UIViewController {
 
     let viewModel = FavoritesViewModel()
     
+    @IBOutlet weak var anyFavoritesInfoLabel: UILabel!
+    
     @IBOutlet weak var favoritesTableView: UITableView!
     
     override func viewDidLoad() {
@@ -24,6 +26,10 @@ class FavoritesVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         favoritesTableView.reloadData()
+        isFavoritesEmty()
+    }
+    func isFavoritesEmty() {
+        anyFavoritesInfoLabel.isHidden = viewModel.fetchFavorites().isEmpty ? false : true
     }
 
 
@@ -38,7 +44,6 @@ extension FavoritesVC : UITableViewDelegate, UITableViewDataSource {
         let yemekDetay = viewModel.fetchFavorites()[indexPath.row]
         
         cell.foodName.text = yemekDetay.yemek_adi!
-//        cell.foodCountLabel.text = "\(yemekDetay.yemek_siparis_adet!) "
         cell.foodPrice.text = "\(yemekDetay.yemek_fiyat!) ₺"
         
         if let url = URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(yemekDetay.yemek_resim_adi!)") {
@@ -60,6 +65,7 @@ extension FavoritesVC : UITableViewDelegate, UITableViewDataSource {
             let deleteAction = UIAlertAction(title: "Evet", style: .destructive) { _ in
                 self.viewModel.deleteFavorite(food)
                 self.favoritesTableView.reloadData()
+                self.isFavoritesEmty()
             }
             alert.addAction(deleteAction)
             self.present(alert, animated: true)

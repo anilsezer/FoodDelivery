@@ -35,7 +35,7 @@ class SettingsVC: UIViewController {
         
         contactUsButton.setTitle("Contact Us", for: .normal)
         contactUsButton.layer.cornerRadius = 25
-        contactUsButton.backgroundColor = .darkGray
+        contactUsButton.backgroundColor = .black
         contactUsButton.addTarget(self, action: #selector(privacyPolicyTapped), for: .touchUpInside)
         view.addSubview(contactUsButton)
         contactUsButton.snp.makeConstraints { make in
@@ -46,7 +46,7 @@ class SettingsVC: UIViewController {
         
         rateUsButton.setTitle("Privacy Policy", for: .normal)
         rateUsButton.layer.cornerRadius = 25
-        rateUsButton.backgroundColor = .darkGray
+        rateUsButton.backgroundColor = .black
         rateUsButton.addTarget(self, action: #selector(privacyPolicyTapped), for: .touchUpInside)
         view.addSubview(rateUsButton)
         rateUsButton.snp.makeConstraints { make in
@@ -57,7 +57,7 @@ class SettingsVC: UIViewController {
         
         privacyButton.setTitle("Privacy Policy", for: .normal)
         privacyButton.layer.cornerRadius = 25
-        privacyButton.backgroundColor = .darkGray
+        privacyButton.backgroundColor = .black
         privacyButton.addTarget(self, action: #selector(privacyPolicyTapped), for: .touchUpInside)
         view.addSubview(privacyButton)
         privacyButton.snp.makeConstraints { make in
@@ -67,7 +67,7 @@ class SettingsVC: UIViewController {
         }
         
         restorePurchase.setTitle("Restore Purchases", for: .normal)
-        restorePurchase.backgroundColor = .darkGray
+        restorePurchase.backgroundColor = .black
         restorePurchase.layer.cornerRadius = 25
         restorePurchase.addTarget(self, action: #selector(restorePurchasesTapped), for: .touchUpInside)
         view.addSubview(restorePurchase)
@@ -78,7 +78,7 @@ class SettingsVC: UIViewController {
         }
         
         termOfUse.setTitle("Terms of Use", for: .normal)
-        termOfUse.backgroundColor = .darkGray
+        termOfUse.backgroundColor = .black
         termOfUse.layer.cornerRadius = 25
         termOfUse.addTarget(self, action: #selector(termsOfUseTapped), for: .touchUpInside)
         view.addSubview(termOfUse)

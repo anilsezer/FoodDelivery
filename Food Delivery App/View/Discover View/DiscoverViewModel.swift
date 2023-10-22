@@ -6,18 +6,12 @@
 //
 
 import Foundation
-import RxSwift
+import Alamofire
 
 class DiscoverViewModel {
     
-    var yemeklerRepo = YemeklerDaoRepository()
     var tamListe = [Yemekler]()
 
-    func yemekleriGetir(completion: @escaping([Yemekler]? )-> Void ) {
-        yemeklerRepo.yemekleriGetir{ yemekler in
-            completion(yemekler)
-        }
-    }
     func ara(aramaKelimesi: String) -> [Yemekler] {
         var aramaListesi = [Yemekler]()
         aramaListesi = tamListe.filter({
@@ -25,5 +19,21 @@ class DiscoverViewModel {
            
         })
         return aramaListesi
+    }
+    func yemekleriGetir(completion: @escaping([Yemekler]? )-> Void ) {
+        AF.request("http://kasimadalan.pe.hu/yemekler/tumYemekleriGetir.php",method: .get).response { response in
+            if let data = response.data {
+                do {
+                    let cevap = try JSONDecoder().decode(YemeklerCevap.self, from: data)
+                    var liste = [Yemekler]()
+                    if let yemekListesi = cevap.yemekler {
+                        completion(yemekListesi)
+                        liste = yemekListesi
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
     }
 }

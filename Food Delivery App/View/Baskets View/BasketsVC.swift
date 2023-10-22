@@ -22,7 +22,7 @@ class BasketsVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.sepetiGetir(kullaniciAdi: "kullaniciAdi") { [weak self] in
+        viewModel.sepetiGetir(kullaniciAdi: "kullaniciAdi2") { [weak self] in
             self?.basketTableView?.reloadData()
             self?.isBasketEmpty()
         }
@@ -30,9 +30,11 @@ class BasketsVC: UIViewController {
     func isBasketEmpty() {
         if viewModel.sepetYemekListesi.isEmpty {
             viewModel.sepetYemekListesi.removeAll()
+            basketTableView?.isHidden = true
             productInfoLabel?.isHidden = false
         } else {
             productInfoLabel?.isHidden = true
+            basketTableView?.isHidden = false
         }
     }
 }
@@ -55,6 +57,7 @@ extension BasketsVC : UITableViewDelegate, UITableViewDataSource {
                 cell.foodImageView.kf.setImage(with: url)
             }
         }
+        dump(viewModel.sepetYemekListesi)
         
         return cell
     }
@@ -67,11 +70,14 @@ extension BasketsVC : UITableViewDelegate, UITableViewDataSource {
             alert.addAction(cancelAction)
             
             let deleteAction = UIAlertAction(title: "Evet", style: .destructive) { _ in
-                self.viewModel.yemegiSil(sepet_yemek_id: Int(food.sepet_yemek_id!)!, kullanici_adi: "kullaniciAdi") {
-                    self.viewModel.sepetiGetir(kullaniciAdi: "kullaniciAdi") {
+                self.viewModel.yemegiSil(sepet_yemek_id: Int(food.sepet_yemek_id!)!, kullanici_adi: "kullaniciAdi2") {
+                    self.viewModel.sepetiGetir(kullaniciAdi: "kullaniciAdi2") {
                         self.basketTableView?.reloadData()
                     }
                 }
+                self.viewModel.sepetYemekListesi.remove(at: indexPath.row)
+                self.basketTableView?.reloadData()
+                self.isBasketEmpty()
             }
             alert.addAction(deleteAction)
             self.present(alert, animated: true)
