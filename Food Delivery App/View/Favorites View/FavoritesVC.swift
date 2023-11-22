@@ -55,7 +55,7 @@ extension FavoritesVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Sil") { (action, view, completion) in
             let food = self.viewModel.fetchFavorites()[indexPath.row]
-            let alert = UIAlertController(title: "Emin misin", message: "\(food.yemek_adi!) silinsin mi", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Emin misin", message: "\(food.yemek_adi!) silinsin mi?", preferredStyle: .alert)
             
             let cancelAction = UIAlertAction(title: "İptal", style: .cancel)
             alert.addAction(cancelAction)
