@@ -24,6 +24,7 @@
 		5A5D2FAF2AD861D2003CAF22 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5D2FAE2AD861D2003CAF22 /* Kingfisher */; };
 		5A5D2FB12AD86794003CAF22 /* YemeklerCevap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5D2FB02AD86794003CAF22 /* YemeklerCevap.swift */; };
 		5A5D2FB62AD8687E003CAF22 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5A5D2FB52AD8687E003CAF22 /* Alamofire */; };
+		5A73FA792B419CD100032926 /* UIColor Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A73FA782B419CD100032926 /* UIColor Extension.swift */; };
 		5A79D51B2AD6C44200C83B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79D51A2AD6C44200C83B06 /* AppDelegate.swift */; };
 		5A79D51D2AD6C44200C83B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79D51C2AD6C44200C83B06 /* SceneDelegate.swift */; };
 		5A79D51F2AD6C44200C83B06 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79D51E2AD6C44200C83B06 /* DiscoverVC.swift */; };
@@ -38,6 +39,7 @@
 		5AA3B4102B0E32F00001F402 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3B40F2B0E32F00001F402 /* LoginViewModel.swift */; };
 		5AA3B4122B0E32FB0001F402 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3B4112B0E32FB0001F402 /* SingUpViewModel.swift */; };
 		5ACE6A3F2ADC33E1002F27D3 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE6A3E2ADC33E1002F27D3 /* BasketTableViewCell.swift */; };
+		5AFCA11A2B3C415E00C1B01D /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA1192B3C415E00C1B01D /* OnboardingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,7 @@
 		5A5D2FA72AD74399003CAF22 /* Yemekler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Yemekler.swift; sourceTree = "<group>"; };
 		5A5D2FAB2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerCollectionViewCell.swift; sourceTree = "<group>"; };
 		5A5D2FB02AD86794003CAF22 /* YemeklerCevap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YemeklerCevap.swift; sourceTree = "<group>"; };
+		5A73FA782B419CD100032926 /* UIColor Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor Extension.swift"; sourceTree = "<group>"; };
 		5A79D5172AD6C44200C83B06 /* Food Delivery App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Delivery App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A79D51A2AD6C44200C83B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A79D51C2AD6C44200C83B06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		5AA3B40F2B0E32F00001F402 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5AA3B4112B0E32FB0001F402 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
 		5ACE6A3E2ADC33E1002F27D3 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
+		5AFCA1192B3C415E00C1B01D /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			children = (
 				5A36B18F2AE550FC002C910E /* UIView + Extension.swift */,
 				5A36B1912AE56C90002C910E /* UIViewController Extension.swift */,
+				5A73FA782B419CD100032926 /* UIColor Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				5A79D5362AD6C7B300C83B06 /* Baskets View */,
 				5AA3B4092B0E31180001F402 /* Login View */,
 				5AA3B40A2B0E314A0001F402 /* SingUp View */,
+				5AFCA1182B3C413900C1B01D /* Onboarding View */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +223,14 @@
 				5AA3B4112B0E32FB0001F402 /* SingUpViewModel.swift */,
 			);
 			path = "SingUp View";
+			sourceTree = "<group>";
+		};
+		5AFCA1182B3C413900C1B01D /* Onboarding View */ = {
+			isa = PBXGroup;
+			children = (
+				5AFCA1192B3C415E00C1B01D /* OnboardingVC.swift */,
+			);
+			path = "Onboarding View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,12 +327,14 @@
 				5A79D51F2AD6C44200C83B06 /* DiscoverVC.swift in Sources */,
 				5A36B1902AE550FC002C910E /* UIView + Extension.swift in Sources */,
 				5A79D51B2AD6C44200C83B06 /* AppDelegate.swift in Sources */,
+				5A73FA792B419CD100032926 /* UIColor Extension.swift in Sources */,
 				5A5D2FA82AD74399003CAF22 /* Yemekler.swift in Sources */,
 				5A79D51D2AD6C44200C83B06 /* SceneDelegate.swift in Sources */,
 				5A5D2FA22AD6DFF1003CAF22 /* DiscoverViewModel.swift in Sources */,
 				5A43256C2ADD740D00EE15B1 /* DetailPageViewModel.swift in Sources */,
 				5A79D53E2AD6C87200C83B06 /* FavoritesVC.swift in Sources */,
 				5A79D53C2AD6C85C00C83B06 /* SettingsVC.swift in Sources */,
+				5AFCA11A2B3C415E00C1B01D /* OnboardingVC.swift in Sources */,
 				5A5D2FAC2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift in Sources */,
 				5AA3B4122B0E32FB0001F402 /* SingUpViewModel.swift in Sources */,
 				5AA3B4102B0E32F00001F402 /* LoginViewModel.swift in Sources */,
