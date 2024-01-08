@@ -24,11 +24,21 @@ class LoginVC: UIViewController {
             make.centerY.equalToSuperview().dividedBy(2).offset(20)
         }
         
+        let loginLabel = UILabel()
+        loginLabel.text = "Log In"
+        loginLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        view.addSubview(loginLabel)
+        loginLabel.snp.makeConstraints { make in
+            make.top.equalTo(mainImageView.snp.bottom)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(40)
+        }
+        
         let eMailLabel = UILabel()
         eMailLabel.text = "E mail"
         view.addSubview(eMailLabel)
         eMailLabel.snp.makeConstraints { make in
-            make.top.equalTo(mainImageView.snp.bottom).offset(20)
+            make.top.equalTo(loginLabel.snp.bottom).offset(10)
             make.left.equalToSuperview().offset(20)
             make.height.equalTo(30)
         }
@@ -81,9 +91,10 @@ class LoginVC: UIViewController {
         
         let loginButton = UIButton()
         loginButton.setTitle("Log In", for: .normal)
-        loginButton.setTitleColor(UIColor.mainColor, for: .normal)
+        loginButton.setTitleColor(UIColor.white, for: .normal)
         loginButton.layer.cornerRadius = 15
         loginButton.layer.borderWidth = 2
+        loginButton.backgroundColor = .mainColor
         loginButton.layer.borderColor = UIColor.mainColor?.cgColor
         loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         view.addSubview(loginButton)

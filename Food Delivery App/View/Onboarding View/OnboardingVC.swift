@@ -35,7 +35,7 @@ class OnboardingVC: UIViewController {
             make.centerX.equalToSuperview()
             make.height.equalTo(80)
         }
-
+        
         let attributedText = NSMutableAttributedString(string: mainTitleLabel.text!)
         attributedText.addAttribute(.foregroundColor, value: UIColor.mainColor!, range: NSRange(location: 4, length: 5))
         mainTitleLabel.attributedText = attributedText
@@ -56,13 +56,14 @@ class OnboardingVC: UIViewController {
         loginButton.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
         loginButton.layer.cornerRadius = 20
         loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         view.addSubview(loginButton)
         loginButton.snp.makeConstraints { make in
             make.top.equalTo(subTitleLabel.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(50)
         }
-                
+        
         let signUpButton = UIButton()
         signUpButton.setTitle("Sing Up", for: .normal)
         signUpButton.setTitleColor(UIColor.mainColor, for: .normal)
@@ -71,12 +72,20 @@ class OnboardingVC: UIViewController {
         signUpButton.layer.borderWidth = 2
         signUpButton.layer.cornerRadius = 15
         signUpButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        signUpButton.addTarget(self, action: #selector(signUPButtonTapped), for: .touchUpInside)
         view.addSubview(signUpButton)
         signUpButton.snp.makeConstraints { make in
             make.top.equalTo(loginButton.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(50)
         }
+    }
+    
+    @objc private func loginButtonTapped() {
+        
+    }
+    
+    @objc private func signUPButtonTapped() {
         
     }
 }
