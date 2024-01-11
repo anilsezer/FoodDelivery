@@ -8,13 +8,15 @@
 import UIKit
 import SnapKit
 class LoginVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
     }
     
     private func createUI() {
+        
+        view.backgroundColor = .white
         
         let mainImageView = UIImageView(image: UIImage(named: "Login"))
         view.addSubview(mainImageView)
@@ -43,11 +45,13 @@ class LoginVC: UIViewController {
             make.height.equalTo(30)
         }
         
-        let eMailTextField = UITextField()
-        eMailTextField.placeholder = "  @gmail.com"
+        let eMailTextField = PaddedTextField()
+        eMailTextField.placeholder = "@gmail.com"
         eMailTextField.layer.borderColor = UIColor.mainColor?.cgColor
         eMailTextField.layer.cornerRadius = 15
         eMailTextField.borderWidth = 2
+        eMailTextField.autocorrectionType = .no
+        eMailTextField.autocapitalizationType = .none
         view.addSubview(eMailTextField)
         eMailTextField.snp.makeConstraints { make in
             make.top.equalTo(eMailLabel.snp.bottom).offset(15)
@@ -65,8 +69,8 @@ class LoginVC: UIViewController {
             make.height.equalTo(30)
         }
         
-        let passwordTextField = UITextField()
-        passwordTextField.placeholder = "    ********"
+        let passwordTextField = PaddedTextField()
+        passwordTextField.placeholder = "********"
         passwordTextField.layer.borderColor = UIColor.mainColor?.cgColor
         passwordTextField.layer.cornerRadius = 15
         passwordTextField.borderWidth = 2
@@ -82,6 +86,7 @@ class LoginVC: UIViewController {
         forgotPasswordButton.setTitle("Forgot Password?", for: .normal)
         forgotPasswordButton.setTitleColor(UIColor.systemGray3, for: .normal)
         forgotPasswordButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordTapped), for: .touchUpInside)
         view.addSubview(forgotPasswordButton)
         forgotPasswordButton.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(10)
@@ -103,5 +108,8 @@ class LoginVC: UIViewController {
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(50)
         }
+    }
+    @objc private func forgotPasswordTapped() {
+        
     }
 }

@@ -19,7 +19,7 @@ class OnboardingVC: UIViewController {
         let mainImage = UIImageView(image: UIImage(named: "Onboarding"))
         view.addSubview(mainImage)
         mainImage.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(30)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(5)
             make.centerY.equalToSuperview().dividedBy(2).offset(30)
             make.left.right.equalToSuperview()
         }
@@ -80,12 +80,21 @@ class OnboardingVC: UIViewController {
             make.height.equalTo(50)
         }
     }
+//    @objc private func loginButtonTapped() {
+//        let loginVC = LoginVC()
+//
+//        let navVC = UINavigationController(rootViewController: loginVC)
+//           navVC.modalPresentationStyle = .fullScreen
+//           present(navVC, animated: true)
+//    }
     
     @objc private func loginButtonTapped() {
-        
+        let loginVC = LoginVC()
+        navigationController?.pushViewController(loginVC, animated: true)
     }
-    
+
     @objc private func signUPButtonTapped() {
-        
+        let signUPVC =  SignUpVC()
+        navigationController?.pushViewController(signUPVC, animated: true)
     }
 }

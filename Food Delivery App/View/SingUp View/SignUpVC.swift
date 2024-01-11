@@ -8,13 +8,15 @@
 import UIKit
 import SnapKit
 
-class SingUpVC: UIViewController {
+class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
     }
     private func createUI() {
+        
+        view.backgroundColor = .white
         
         let mainImageView = UIImageView(image: UIImage(named: "SingUp"))
         view.addSubview(mainImageView)
@@ -34,8 +36,8 @@ class SingUpVC: UIViewController {
             make.height.equalTo(40)
         }
         
-        let fullNameTextField = UITextField()
-        fullNameTextField.placeholder = " Full Name"
+        let fullNameTextField = PaddedTextField()
+        fullNameTextField.placeholder = "Full Name"
         fullNameTextField.layer.borderWidth = 2
         fullNameTextField.layer.cornerRadius = 15
         fullNameTextField.layer.borderColor = UIColor.mainColor?.cgColor
@@ -46,8 +48,8 @@ class SingUpVC: UIViewController {
             make.height.equalTo(40)
         }
         
-        let emailTextField = UITextField()
-        emailTextField.placeholder = " Email"
+        let emailTextField = PaddedTextField()
+        emailTextField.placeholder = "Email"
         emailTextField.layer.borderWidth = 2
         emailTextField.layer.cornerRadius = 15
         emailTextField.layer.borderColor = UIColor.mainColor?.cgColor
@@ -58,8 +60,8 @@ class SingUpVC: UIViewController {
             make.height.equalTo(40)
         }
         
-        let passwordTextField = UITextField()
-        passwordTextField.placeholder = " Password"
+        let passwordTextField = PaddedTextField()
+        passwordTextField.placeholder = "Password"
         passwordTextField.layer.borderWidth = 2
         passwordTextField.layer.cornerRadius = 15
         passwordTextField.layer.borderColor = UIColor.mainColor?.cgColor
@@ -70,8 +72,8 @@ class SingUpVC: UIViewController {
             make.height.equalTo(40)
         }
         
-        let confirmPasswordTextField = UITextField()
-        confirmPasswordTextField.placeholder = " Confirm Password"
+        let confirmPasswordTextField = PaddedTextField()
+        confirmPasswordTextField.placeholder = "Confirm Password"
         confirmPasswordTextField.layer.borderWidth = 2
         confirmPasswordTextField.layer.cornerRadius = 15
         confirmPasswordTextField.layer.borderColor = UIColor.mainColor?.cgColor

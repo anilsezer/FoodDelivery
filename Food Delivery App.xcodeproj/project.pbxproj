@@ -34,10 +34,11 @@
 		5A79D53C2AD6C85C00C83B06 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79D53B2AD6C85C00C83B06 /* SettingsVC.swift */; };
 		5A79D53E2AD6C87200C83B06 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79D53D2AD6C87200C83B06 /* FavoritesVC.swift */; };
 		5A79D5402AD6C8A600C83B06 /* BasketsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79D53F2AD6C8A600C83B06 /* BasketsVC.swift */; };
+		5A8341FE2B5037C800ED2B4A /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8341FD2B5037C800ED2B4A /* UITextField + Extension.swift */; };
 		5AA3B40C2B0E32A00001F402 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3B40B2B0E32A00001F402 /* LoginVC.swift */; };
-		5AA3B40E2B0E32B00001F402 /* SingUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3B40D2B0E32B00001F402 /* SingUpVC.swift */; };
+		5AA3B40E2B0E32B00001F402 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3B40D2B0E32B00001F402 /* SignUpVC.swift */; };
 		5AA3B4102B0E32F00001F402 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3B40F2B0E32F00001F402 /* LoginViewModel.swift */; };
-		5AA3B4122B0E32FB0001F402 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3B4112B0E32FB0001F402 /* SingUpViewModel.swift */; };
+		5AA3B4122B0E32FB0001F402 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3B4112B0E32FB0001F402 /* SignUpViewModel.swift */; };
 		5ACE6A3F2ADC33E1002F27D3 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE6A3E2ADC33E1002F27D3 /* BasketTableViewCell.swift */; };
 		5AFCA11A2B3C415E00C1B01D /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA1192B3C415E00C1B01D /* OnboardingVC.swift */; };
 /* End PBXBuildFile section */
@@ -69,10 +70,11 @@
 		5A79D53B2AD6C85C00C83B06 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		5A79D53D2AD6C87200C83B06 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		5A79D53F2AD6C8A600C83B06 /* BasketsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketsVC.swift; sourceTree = "<group>"; };
+		5A8341FD2B5037C800ED2B4A /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField + Extension.swift"; sourceTree = "<group>"; };
 		5AA3B40B2B0E32A00001F402 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		5AA3B40D2B0E32B00001F402 /* SingUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpVC.swift; sourceTree = "<group>"; };
+		5AA3B40D2B0E32B00001F402 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		5AA3B40F2B0E32F00001F402 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		5AA3B4112B0E32FB0001F402 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
+		5AA3B4112B0E32FB0001F402 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		5ACE6A3E2ADC33E1002F27D3 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		5AFCA1192B3C415E00C1B01D /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				5A36B18F2AE550FC002C910E /* UIView + Extension.swift */,
+				5A8341FD2B5037C800ED2B4A /* UITextField + Extension.swift */,
 				5A36B1912AE56C90002C910E /* UIViewController Extension.swift */,
 				5A73FA782B419CD100032926 /* UIColor Extension.swift */,
 			);
@@ -219,8 +222,8 @@
 		5AA3B40A2B0E314A0001F402 /* SingUp View */ = {
 			isa = PBXGroup;
 			children = (
-				5AA3B40D2B0E32B00001F402 /* SingUpVC.swift */,
-				5AA3B4112B0E32FB0001F402 /* SingUpViewModel.swift */,
+				5AA3B40D2B0E32B00001F402 /* SignUpVC.swift */,
+				5AA3B4112B0E32FB0001F402 /* SignUpViewModel.swift */,
 			);
 			path = "SingUp View";
 			sourceTree = "<group>";
@@ -314,7 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AA3B40E2B0E32B00001F402 /* SingUpVC.swift in Sources */,
+				5AA3B40E2B0E32B00001F402 /* SignUpVC.swift in Sources */,
 				5AA3B40C2B0E32A00001F402 /* LoginVC.swift in Sources */,
 				5A5D2FA62AD6E021003CAF22 /* FavoritesViewModel.swift in Sources */,
 				5A79D5402AD6C8A600C83B06 /* BasketsVC.swift in Sources */,
@@ -329,6 +332,7 @@
 				5A79D51B2AD6C44200C83B06 /* AppDelegate.swift in Sources */,
 				5A73FA792B419CD100032926 /* UIColor Extension.swift in Sources */,
 				5A5D2FA82AD74399003CAF22 /* Yemekler.swift in Sources */,
+				5A8341FE2B5037C800ED2B4A /* UITextField + Extension.swift in Sources */,
 				5A79D51D2AD6C44200C83B06 /* SceneDelegate.swift in Sources */,
 				5A5D2FA22AD6DFF1003CAF22 /* DiscoverViewModel.swift in Sources */,
 				5A43256C2ADD740D00EE15B1 /* DetailPageViewModel.swift in Sources */,
@@ -336,7 +340,7 @@
 				5A79D53C2AD6C85C00C83B06 /* SettingsVC.swift in Sources */,
 				5AFCA11A2B3C415E00C1B01D /* OnboardingVC.swift in Sources */,
 				5A5D2FAC2AD8359F003CAF22 /* YemeklerCollectionViewCell.swift in Sources */,
-				5AA3B4122B0E32FB0001F402 /* SingUpViewModel.swift in Sources */,
+				5AA3B4122B0E32FB0001F402 /* SignUpViewModel.swift in Sources */,
 				5AA3B4102B0E32F00001F402 /* LoginViewModel.swift in Sources */,
 				5A37E2302AE41C620002AF9D /* FoodDataModel.xcdatamodeld in Sources */,
 				5ACE6A3F2ADC33E1002F27D3 /* BasketTableViewCell.swift in Sources */,
