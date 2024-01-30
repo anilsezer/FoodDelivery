@@ -7,8 +7,13 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 class LoginVC: UIViewController {
     
+    
+    let eMailTextField = PaddedTextField()
+    let passwordTextField = PaddedTextField()
+    let auth = Auth.auth()
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
@@ -45,7 +50,6 @@ class LoginVC: UIViewController {
             make.height.equalTo(30)
         }
         
-        let eMailTextField = PaddedTextField()
         eMailTextField.placeholder = "@gmail.com"
         eMailTextField.layer.borderColor = UIColor.mainColor?.cgColor
         eMailTextField.layer.cornerRadius = 15
@@ -69,10 +73,12 @@ class LoginVC: UIViewController {
             make.height.equalTo(30)
         }
         
-        let passwordTextField = PaddedTextField()
         passwordTextField.placeholder = "********"
         passwordTextField.layer.borderColor = UIColor.mainColor?.cgColor
         passwordTextField.layer.cornerRadius = 15
+        passwordTextField.autocorrectionType = .no
+        passwordTextField.autocapitalizationType = .none
+        passwordTextField.isSecureTextEntry = true
         passwordTextField.borderWidth = 2
         view.addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints { make in
@@ -81,7 +87,7 @@ class LoginVC: UIViewController {
             make.right.equalToSuperview().inset(20)
             make.height.equalTo(50)
         }
-        
+
         let forgotPasswordButton = UIButton()
         forgotPasswordButton.setTitle("Forgot Password?", for: .normal)
         forgotPasswordButton.setTitleColor(UIColor.systemGray3, for: .normal)
@@ -101,6 +107,7 @@ class LoginVC: UIViewController {
         loginButton.layer.borderWidth = 2
         loginButton.backgroundColor = .mainColor
         loginButton.layer.borderColor = UIColor.mainColor?.cgColor
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         view.addSubview(loginButton)
         loginButton.snp.makeConstraints { make in
@@ -111,5 +118,22 @@ class LoginVC: UIViewController {
     }
     @objc private func forgotPasswordTapped() {
         
+    }
+    @objc private func loginButtonTapped() {
+        guard let email = eMailTextField.text, !email.isEmpty,
+              let password = passwordTextField.text, !password.isEmpty else {
+            print("ererr")
+            return
+        }
+        auth.signIn(withEmail: email, password: password) { result, error in
+            if error != nil {
+                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
+                let actionButton = UIAlertAction(title: "Okay", style: .default)
+                alert.addAction(actionButton)
+                self.present(alert, animated: true)
+            } else {
+                print(self.auth.currentUser!.email!)
+            }
+        }
     }
 }
