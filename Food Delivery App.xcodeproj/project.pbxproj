@@ -69,6 +69,9 @@
 		5AA3B4122B0E32FB0001F402 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA3B4112B0E32FB0001F402 /* SignUpViewModel.swift */; };
 		5ACE6A3F2ADC33E1002F27D3 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE6A3E2ADC33E1002F27D3 /* BasketTableViewCell.swift */; };
 		5AFCA11A2B3C415E00C1B01D /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFCA1192B3C415E00C1B01D /* OnboardingVC.swift */; };
+		5AFD59492B69159800C65040 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5AFD59482B69159800C65040 /* IQKeyboardManagerSwift */; };
+		5AFD594C2B69339500C65040 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFD594B2B69339500C65040 /* ForgotPasswordVC.swift */; };
+		5AFD594E2B69344400C65040 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFD594D2B69344400C65040 /* ForgotPasswordViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +109,8 @@
 		5AA3B4112B0E32FB0001F402 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		5ACE6A3E2ADC33E1002F27D3 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
 		5AFCA1192B3C415E00C1B01D /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		5AFD594B2B69339500C65040 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		5AFD594D2B69344400C65040 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +145,7 @@
 				5A53D8032B62796300D657E4 /* FirebaseAnalytics in Frameworks */,
 				5A53D8132B62796300D657E4 /* FirebaseCrashlytics in Frameworks */,
 				5A5D2FB62AD8687E003CAF22 /* Alamofire in Frameworks */,
+				5AFD59492B69159800C65040 /* IQKeyboardManagerSwift in Frameworks */,
 				5A53D80D2B62796300D657E4 /* FirebaseAppDistribution-Beta in Frameworks */,
 				5A53D8192B62796300D657E4 /* FirebaseDynamicLinks in Frameworks */,
 				5A53D81F2B62796300D657E4 /* FirebaseFirestoreSwift in Frameworks */,
@@ -225,6 +231,7 @@
 				5AA3B4092B0E31180001F402 /* Login View */,
 				5AA3B40A2B0E314A0001F402 /* SingUp View */,
 				5AFCA1182B3C413900C1B01D /* Onboarding View */,
+				5AFD594A2B69336B00C65040 /* ForgotPassword View */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,6 +300,15 @@
 			path = "Onboarding View";
 			sourceTree = "<group>";
 		};
+		5AFD594A2B69336B00C65040 /* ForgotPassword View */ = {
+			isa = PBXGroup;
+			children = (
+				5AFD594B2B69339500C65040 /* ForgotPasswordVC.swift */,
+				5AFD594D2B69344400C65040 /* ForgotPasswordViewModel.swift */,
+			);
+			path = "ForgotPassword View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -340,6 +356,7 @@
 				5A53D8322B62796300D657E4 /* FirebaseRemoteConfigSwift */,
 				5A53D8342B62796300D657E4 /* FirebaseStorage */,
 				5A53D8362B62796300D657E4 /* FirebaseStorageCombine-Community */,
+				5AFD59482B69159800C65040 /* IQKeyboardManagerSwift */,
 			);
 			productName = "Food Delivery App";
 			productReference = 5A79D5172AD6C44200C83B06 /* Food Delivery App.app */;
@@ -374,6 +391,7 @@
 				5A5D2FB42AD8687E003CAF22 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5A0EA4D62AE28F3D005F700C /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5A53D8012B62796300D657E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5AFD59472B69159800C65040 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 5A79D5182AD6C44200C83B06 /* Products */;
 			projectDirPath = "";
@@ -405,9 +423,11 @@
 			files = (
 				5AA3B40E2B0E32B00001F402 /* SignUpVC.swift in Sources */,
 				5AA3B40C2B0E32A00001F402 /* LoginVC.swift in Sources */,
+				5AFD594C2B69339500C65040 /* ForgotPasswordVC.swift in Sources */,
 				5A5D2FA62AD6E021003CAF22 /* FavoritesViewModel.swift in Sources */,
 				5A79D5402AD6C8A600C83B06 /* BasketsVC.swift in Sources */,
 				5A4325682ADD701A00EE15B1 /* YemeklerDetay.swift in Sources */,
+				5AFD594E2B69344400C65040 /* ForgotPasswordViewModel.swift in Sources */,
 				5A5D2FA42AD6E00E003CAF22 /* BasketsViewModel.swift in Sources */,
 				5A36B1922AE56C90002C910E /* UIViewController Extension.swift in Sources */,
 				5A37E2322AE425C20002AF9D /* FavoritesTableViewCell.swift in Sources */,
@@ -682,6 +702,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		5AFD59472B69159800C65040 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -834,6 +862,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A5D2FB42AD8687E003CAF22 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		5AFD59482B69159800C65040 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5AFD59472B69159800C65040 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

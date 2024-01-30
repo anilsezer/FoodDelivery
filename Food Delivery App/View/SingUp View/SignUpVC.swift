@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Firebase
+import IQKeyboardManagerSwift
 
 class SignUpVC: UIViewController {
     
@@ -48,6 +49,7 @@ class SignUpVC: UIViewController {
         fullNameTextField.layer.borderWidth = 2
         fullNameTextField.layer.cornerRadius = 15
         fullNameTextField.layer.borderColor = UIColor.mainColor?.cgColor
+        fullNameTextField.autocorrectionType = .no
         view.addSubview(fullNameTextField)
         fullNameTextField.snp.makeConstraints { make in
             make.top.equalTo(signUPLabel.snp.bottom).offset(20)
@@ -74,11 +76,24 @@ class SignUpVC: UIViewController {
         passwordTextField.layer.borderColor = UIColor.mainColor?.cgColor
         passwordTextField.autocapitalizationType = .none
         passwordTextField.autocorrectionType = .no
+        passwordTextField.isSecureTextEntry = true
         view.addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(40)
+        }
+        
+        let showPasswordButton = UIButton()
+        showPasswordButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        showPasswordButton.tintColor = UIColor.mainColor
+        showPasswordButton.addTarget(self, action: #selector(showPasswordButtonTapped), for: .touchUpInside)
+        passwordTextField.addSubview(showPasswordButton)
+        showPasswordButton.snp.makeConstraints { make in
+            make.right.equalToSuperview().inset(10)
+            make.height.equalTo(30)
+            make.width.equalTo(30)
+            make.centerY.equalToSuperview()
         }
         
         confirmPasswordTextField.placeholder = "Confirm Password"
@@ -87,11 +102,25 @@ class SignUpVC: UIViewController {
         confirmPasswordTextField.layer.borderColor = UIColor.mainColor?.cgColor
         confirmPasswordTextField.autocapitalizationType = .none
         confirmPasswordTextField.autocorrectionType = .no
+        confirmPasswordTextField.isSecureTextEntry = true
+        confirmPasswordTextField.addTarget(self, action: #selector(showPasswordButtonTapped), for: .touchUpInside)
         view.addSubview(confirmPasswordTextField)
         confirmPasswordTextField.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(40)
+        }
+        
+        let showConfirmPasswordButton = UIButton()
+        showConfirmPasswordButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        showConfirmPasswordButton.tintColor = UIColor.mainColor
+        confirmPasswordTextField.addSubview(showConfirmPasswordButton)
+        showConfirmPasswordButton.addTarget(self, action: #selector(showConfirmPasswordButtonTapped), for: .touchUpInside)
+        showConfirmPasswordButton.snp.makeConstraints { make in
+            make.right.equalToSuperview().inset(10)
+            make.height.equalTo(30)
+            make.width.equalTo(30)
+            make.centerY.equalToSuperview()
         }
         
         let signUPButton = UIButton()
@@ -106,6 +135,19 @@ class SignUpVC: UIViewController {
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(50)
         }
+    }
+    
+    @objc private func showPasswordButtonTapped() {
+        passwordTextField.isSecureTextEntry.toggle()
+        let imageName = passwordTextField.isSecureTextEntry ? "eye.fill" : "eye.slash.fill"
+        let image = UIImage(systemName: imageName)
+        (passwordTextField.subviews.first as? UIButton)?.setImage(image, for: .normal)
+    }
+    @objc private func showConfirmPasswordButtonTapped() {
+        confirmPasswordTextField.isSecureTextEntry.toggle()
+        let imageName = confirmPasswordTextField.isSecureTextEntry ? "eye.fill" : "eye.slash.fill"
+        let image = UIImage(systemName: imageName)
+        (confirmPasswordTextField.subviews.first as? UIButton)?.setImage(image, for: .normal)
     }
     
     @objc private func signUpButtonTapped() {

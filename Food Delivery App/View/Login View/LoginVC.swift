@@ -8,12 +8,14 @@
 import UIKit
 import SnapKit
 import FirebaseAuth
+import IQKeyboardManagerSwift
+
 class LoginVC: UIViewController {
-    
     
     let eMailTextField = PaddedTextField()
     let passwordTextField = PaddedTextField()
     let auth = Auth.auth()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
@@ -87,7 +89,19 @@ class LoginVC: UIViewController {
             make.right.equalToSuperview().inset(20)
             make.height.equalTo(50)
         }
-
+        
+        let showPasswordButton = UIButton()
+        showPasswordButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        showPasswordButton.tintColor = UIColor.mainColor
+        passwordTextField.addSubview(showPasswordButton)
+        showPasswordButton.addTarget(self, action: #selector(showPasswordButtonTapped), for: .touchUpInside)
+        showPasswordButton.snp.makeConstraints { make in
+            make.right.equalToSuperview().inset(10)
+            make.height.equalTo(30)
+            make.width.equalTo(30)
+            make.centerY.equalToSuperview()
+        }
+        
         let forgotPasswordButton = UIButton()
         forgotPasswordButton.setTitle("Forgot Password?", for: .normal)
         forgotPasswordButton.setTitleColor(UIColor.systemGray3, for: .normal)
@@ -116,8 +130,16 @@ class LoginVC: UIViewController {
             make.height.equalTo(50)
         }
     }
+    @objc private func showPasswordButtonTapped() {
+        passwordTextField.isSecureTextEntry.toggle()
+        let imageName = passwordTextField.isSecureTextEntry ? "eye.fill" : "eye.slash.fill"
+        let image = UIImage(systemName: imageName)
+        (passwordTextField.subviews.first as? UIButton)?.setImage(image, for: .normal)
+    }
+    
     @objc private func forgotPasswordTapped() {
-        
+        let vc = ForgotPasswordVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     @objc private func loginButtonTapped() {
         guard let email = eMailTextField.text, !email.isEmpty,
