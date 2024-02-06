@@ -15,6 +15,7 @@ class LoginVC: UIViewController {
     let eMailTextField = PaddedTextField()
     let passwordTextField = PaddedTextField()
     let auth = Auth.auth()
+    let viewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,19 +143,19 @@ class LoginVC: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     @objc private func loginButtonTapped() {
-        guard let email = eMailTextField.text, !email.isEmpty,
-              let password = passwordTextField.text, !password.isEmpty else {
-            print("ererr")
-            return
-        }
-        auth.signIn(withEmail: email, password: password) { result, error in
-            if error != nil {
-                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: .alert)
+        
+        viewModel.email = eMailTextField.text
+        viewModel.password = passwordTextField.text
+        
+        viewModel.loginUser { success, message in
+            if success {
+                print("SUCCCCCCCCCCC")
+
+            } else {
+                let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
                 let actionButton = UIAlertAction(title: "Okay", style: .default)
                 alert.addAction(actionButton)
                 self.present(alert, animated: true)
-            } else {
-                print(self.auth.currentUser!.email!)
             }
         }
     }

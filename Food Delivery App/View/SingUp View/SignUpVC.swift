@@ -12,6 +12,8 @@ import IQKeyboardManagerSwift
 
 class SignUpVC: UIViewController {
     
+    let viewModel = SignUpViewModel()
+    let fullNameTextField = PaddedTextField()
     let passwordTextField = PaddedTextField()
     let emailTextField = PaddedTextField()
     let confirmPasswordTextField = PaddedTextField()
@@ -44,7 +46,6 @@ class SignUpVC: UIViewController {
             make.height.equalTo(40)
         }
         
-        let fullNameTextField = PaddedTextField()
         fullNameTextField.placeholder = "Full Name"
         fullNameTextField.layer.borderWidth = 2
         fullNameTextField.layer.cornerRadius = 15
@@ -143,6 +144,7 @@ class SignUpVC: UIViewController {
         let image = UIImage(systemName: imageName)
         (passwordTextField.subviews.first as? UIButton)?.setImage(image, for: .normal)
     }
+    
     @objc private func showConfirmPasswordButtonTapped() {
         confirmPasswordTextField.isSecureTextEntry.toggle()
         let imageName = confirmPasswordTextField.isSecureTextEntry ? "eye.fill" : "eye.slash.fill"
@@ -151,29 +153,26 @@ class SignUpVC: UIViewController {
     }
     
     @objc private func signUpButtonTapped() {
-        print("Sign Up Button Tapped")
+        viewModel.fullName = fullNameTextField.text
+        viewModel.email = emailTextField.text
+        viewModel.password = passwordTextField.text
+        viewModel.confirmPassword = confirmPasswordTextField.text
         
-        guard let email = emailTextField.text, !email.isEmpty,
-              let password = passwordTextField.text, !password.isEmpty,
-              let confirmPassword = confirmPasswordTextField.text, !confirmPassword.isEmpty else {
-            print("Missing field data")
-            return
-        }
-        
-        if password != confirmPassword {
-            print("Passwords do not match")
-            return
-        }
-        
-        auth.createUser(withEmail: email, password: password) { result, error in
-            if let error = error {
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                let actionButton = UIAlertAction(title: "Okay", style: .default)
-                alert.addAction(actionButton)
-                self.present(alert, animated: true)
+        viewModel.signUp { success, message in
+            let alertTitle: String
+            let alertMessage: String
+            if success {
+                alertTitle = "Success :)"
+                alertMessage = "You Registered Successfully!"
             } else {
-                print("User registered successfully")
+                alertTitle = "Error!"
+                alertMessage = message ?? "Unknown Error!"
             }
+            
+            let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+            let actionButton = UIAlertAction(title: "Okay", style: .default)
+            alert.addAction(actionButton)
+            self.present(alert, animated: true)
         }
     }
 }
