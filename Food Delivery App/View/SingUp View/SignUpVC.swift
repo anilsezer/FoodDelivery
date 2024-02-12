@@ -28,7 +28,7 @@ class SignUpVC: UIViewController {
         
         view.backgroundColor = .white
         
-        let mainImageView = UIImageView(image: UIImage(named: "SingUp"))
+        let mainImageView = UIImageView(image: UIImage(named: "SignUp"))
         view.addSubview(mainImageView)
         mainImageView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
@@ -136,6 +136,21 @@ class SignUpVC: UIViewController {
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(50)
         }
+        let loginButton = UIButton()
+        loginButton.setTitle("Log In", for: .normal)
+        loginButton.setTitleColor(UIColor.mainColor, for: .normal)
+        loginButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        loginButton.layer.borderColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
+        loginButton.layer.borderWidth = 2
+        loginButton.layer.cornerRadius = 15
+        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        view.addSubview(loginButton)
+        loginButton.snp.makeConstraints { make in
+            make.top.equalTo(signUPButton.snp.bottom).offset(15)
+            make.left.right.equalToSuperview().inset(20)
+            make.height.equalTo(50)
+        }
     }
     
     @objc private func showPasswordButtonTapped() {
@@ -174,5 +189,9 @@ class SignUpVC: UIViewController {
             alert.addAction(actionButton)
             self.present(alert, animated: true)
         }
+    }
+    @objc private func loginButtonTapped() {
+        let loginVC = LoginVC()
+        navigationController?.pushViewController(loginVC, animated: true)
     }
 }

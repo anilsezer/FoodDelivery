@@ -15,7 +15,7 @@ class LoginViewModel {
     func loginUser(completion: @escaping (Bool, String?) -> Void) {
         guard let email = email, !email.isEmpty,
               let password  = password, !password.isEmpty else {
-            completion(false, "ERRRRRORRRRRRRR")
+            completion(false, "Email or Password Cannot be Empty.")
             return
         }
         Auth.auth().signIn(withEmail: email, password: password) { result, error in

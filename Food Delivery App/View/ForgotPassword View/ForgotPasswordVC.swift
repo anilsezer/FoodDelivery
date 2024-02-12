@@ -70,6 +70,22 @@ class ForgotPasswordVC: UIViewController {
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(40)
         }
+        
+        let loginButton = UIButton()
+        loginButton.setTitle("Sign Up", for: .normal)
+        loginButton.setTitleColor(UIColor.mainColor, for: .normal)
+        loginButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        loginButton.layer.borderColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
+        loginButton.layer.borderWidth = 2
+        loginButton.layer.cornerRadius = 15
+        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        view.addSubview(loginButton)
+        loginButton.snp.makeConstraints { make in
+            make.top.equalTo(resetPasswordButton.snp.bottom).offset(15)
+            make.left.right.equalToSuperview().inset(20)
+            make.height.equalTo(50)
+        }
     }
     
     private func setupBindings() {
@@ -79,7 +95,10 @@ class ForgotPasswordVC: UIViewController {
                 message: "Password reset email has been sent successfully.",
                 preferredStyle: .alert
             )
-            let okAction = UIAlertAction(title: "OK", style: .default) { _ in }
+            let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                self?.redirectToOnboardingVC()
+                
+            }
             alertController.addAction(okAction)
             self?.present(alertController, animated: true, completion: nil)
         }
@@ -88,8 +107,19 @@ class ForgotPasswordVC: UIViewController {
             print("Error sending reset email: \(errorMessage)")
         }
     }
+    private func redirectToOnboardingVC() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let onboardingVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewControllerID") as! UIViewController
+        self.navigationController?.pushViewController(onboardingVC, animated: true)
+    }
+    
     @objc private func sendResetEmailButtonTapped() {
         viewModel.email = emailTextField.text
         viewModel.sendResetEmail()
+    }
+    
+    @objc private func loginButtonTapped() {
+        let loginVC = LoginVC()
+        navigationController?.pushViewController(loginVC, animated: true)
     }
 }

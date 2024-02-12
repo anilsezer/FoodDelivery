@@ -80,19 +80,12 @@ class OnboardingVC: UIViewController {
             make.height.equalTo(50)
         }
     }
-//    @objc private func loginButtonTapped() {
-//        let loginVC = LoginVC()
-//
-//        let navVC = UINavigationController(rootViewController: loginVC)
-//           navVC.modalPresentationStyle = .fullScreen
-//           present(navVC, animated: true)
-//    }
     
     @objc private func loginButtonTapped() {
         let loginVC = LoginVC()
         navigationController?.pushViewController(loginVC, animated: true)
     }
-
+    
     @objc private func signUPButtonTapped() {
         let signUPVC =  SignUpVC()
         navigationController?.pushViewController(signUPVC, animated: true)

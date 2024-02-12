@@ -123,10 +123,25 @@ class LoginVC: UIViewController {
         loginButton.backgroundColor = .mainColor
         loginButton.layer.borderColor = UIColor.mainColor?.cgColor
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
         view.addSubview(loginButton)
         loginButton.snp.makeConstraints { make in
             make.top.equalTo(forgotPasswordButton.snp.bottom).offset(30)
+            make.left.right.equalToSuperview().inset(20)
+            make.height.equalTo(50)
+        }
+        let signUpButton = UIButton()
+        signUpButton.setTitle("Sign Up", for: .normal)
+        signUpButton.setTitleColor(UIColor.mainColor, for: .normal)
+        signUpButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        signUpButton.layer.borderColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
+        signUpButton.layer.borderWidth = 2
+        signUpButton.layer.cornerRadius = 15
+        signUpButton.titleLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        signUpButton.addTarget(self, action: #selector(signUPButtonTapped), for: .touchUpInside)
+        view.addSubview(signUpButton)
+        signUpButton.snp.makeConstraints { make in
+            make.top.equalTo(loginButton.snp.bottom).offset(15)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(50)
         }
@@ -149,8 +164,9 @@ class LoginVC: UIViewController {
         
         viewModel.loginUser { success, message in
             if success {
-                print("SUCCCCCCCCCCC")
-
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let discoverVC = storyboard.instantiateViewController(withIdentifier: "TabbarViewControllerID") as! UITabBarController
+                self.navigationController?.pushViewController(discoverVC, animated: true)
             } else {
                 let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
                 let actionButton = UIAlertAction(title: "Okay", style: .default)
@@ -158,5 +174,9 @@ class LoginVC: UIViewController {
                 self.present(alert, animated: true)
             }
         }
+    }
+    @objc private func signUPButtonTapped() {
+        let signUpVC = SignUpVC()
+        navigationController?.pushViewController(signUpVC, animated: true)
     }
 }
