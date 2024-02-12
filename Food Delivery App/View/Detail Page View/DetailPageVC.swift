@@ -42,8 +42,8 @@ class DetailPageVC: UIViewController {
     @IBAction func addFavoriteButton(_ sender: Any) {
         viewModel.addToFavorites(yemek!)
         BasketsVC().isBasketEmpty()
-        let alert = UIAlertController(title: nil, message: "Ürün favoriye eklendi.", preferredStyle: .alert)
-        let okay = UIAlertAction(title: "Tamam", style: .default)
+        let alert = UIAlertController(title: nil, message:  "Products added to favorites.", preferredStyle: .alert)
+        let okay = UIAlertAction(title: "Okay", style: .default)
         alert.addAction(okay)
         
         present(alert, animated: true)
@@ -69,8 +69,8 @@ class DetailPageVC: UIViewController {
             viewModel.sepetiGetir(kullaniciAdi: kullaniciAdi) {
                 BasketsVC().viewModel.sepetYemekListesi = self.viewModel.sepetYemekListesi
             }
-            let alert = UIAlertController(title: nil, message: "Ürünler sepete eklendi.", preferredStyle: .alert)
-            let okay = UIAlertAction(title: "Alışverişe Devam Et", style: .default)
+            let alert = UIAlertController(title: nil, message: "The products added to Cart.", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "Continue Shopping", style: .default)
             alert.addAction(okay)
             
             present(alert, animated: true)

@@ -21,7 +21,7 @@ class SettingsVC: UIViewController {
     private func createUI() {
         
         let titleLabel = UILabel()
-        titleLabel.text = "Ayarlar"
+        titleLabel.text = "Settings"
         titleLabel.font = UIFont(name: "Arial Bold", size: 18)
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in

@@ -65,7 +65,7 @@ class OnboardingVC: UIViewController {
         }
         
         let signUpButton = UIButton()
-        signUpButton.setTitle("Sing Up", for: .normal)
+        signUpButton.setTitle("Sign Up", for: .normal)
         signUpButton.setTitleColor(UIColor.mainColor, for: .normal)
         signUpButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         signUpButton.layer.borderColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)

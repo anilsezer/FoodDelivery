@@ -12,10 +12,11 @@ import SnapKit
 class BasketsVC: UIViewController {
     
     @IBOutlet weak var basketTableView: UITableView?
-    
     @IBOutlet weak var productInfoLabel: UILabel!
+    
     var viewModel = BasketsViewModel()
     let orderButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +25,7 @@ class BasketsVC: UIViewController {
         basketTableView?.separatorColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
         
         view.addSubview(orderButton)
-        orderButton.setTitle("Sipariş Ver", for: .normal)
+        orderButton.setTitle("Order Now", for: .normal)
         orderButton.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
         orderButton.layer.cornerRadius = 15
         orderButton.titleLabel?.font = UIFont(name: "Arial Bold", size: 22)
@@ -53,8 +54,8 @@ class BasketsVC: UIViewController {
         }
     }
     @objc private func orderButtonTapped() {
-        let alert = UIAlertController(title: nil, message: "Siparişiniz başarıyla oluşturuldu", preferredStyle: .alert)
-        let okay = UIAlertAction(title: "Tamam", style: .default)
+        let alert = UIAlertController(title: nil, message: "Your order has been created successfully", preferredStyle: .alert)
+        let okay = UIAlertAction(title: "Okay", style: .default)
         alert.addAction(okay)
         present(alert, animated: true)
     }
@@ -83,12 +84,12 @@ extension BasketsVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Sil") { (action, view, completion) in
             let food = self.viewModel.sepetYemekListesi[indexPath.row]
-            let alert = UIAlertController(title: "Emin misin", message: "\(food.yemek_adi!) silinsin mi?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Are You Sure!", message: "Delete \(food.yemek_adi!)?", preferredStyle: .alert)
             
-            let cancelAction = UIAlertAction(title: "İptal", style: .cancel)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
             alert.addAction(cancelAction)
             
-            let deleteAction = UIAlertAction(title: "Evet", style: .destructive) { _ in
+            let deleteAction = UIAlertAction(title: "Okay", style: .destructive) { _ in
                 self.viewModel.yemegiSil(sepet_yemek_id: Int(food.sepet_yemek_id!)!, kullanici_adi: "AnilSezer") {
                     self.viewModel.sepetiGetir(kullaniciAdi: "AnilSezer") {
                         self.basketTableView?.reloadData()

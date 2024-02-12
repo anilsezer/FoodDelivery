@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Keşfet-->
+        <!--Home-->
         <scene sceneID="yWc-OT-pIA">
             <objects>
                 <viewController storyboardIdentifier="DiscoverVC" id="Svb-ER-ooB" customClass="DiscoverVC" customModule="Food_Delivery_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,7 +176,7 @@
                             <constraint firstItem="HPx-D0-3iz" firstAttribute="trailing" secondItem="n8r-nK-Lbt" secondAttribute="trailing" id="mgh-gp-WWH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Keşfet" id="dmf-4h-UCh"/>
+                    <navigationItem key="navigationItem" title="Home" id="dmf-4h-UCh"/>
                     <connections>
                         <outlet property="searchBar" destination="aKd-bM-mLy" id="Bpi-BB-LcO"/>
                         <outlet property="yemeklerCollectionView" destination="n8r-nK-Lbt" id="sAZ-Pk-eft"/>
@@ -270,16 +270,16 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ti7-Fa-LRb">
-                                        <rect key="frame" x="111.66666666666666" y="453.66666666666663" width="106" height="25.666666666666686"/>
+                                        <rect key="frame" x="113" y="453.66666666666663" width="103.33333333333331" height="25.666666666666686"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwp-zu-LPg">
-                                                <rect key="frame" x="0.0" y="0.0" width="55.333333333333336" height="25.666666666666668"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rwp-zu-LPg">
+                                                <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="25.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 ₺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuQ-WZ-OrP">
-                                                <rect key="frame" x="75.333333333333343" y="0.0" width="30.666666666666671" height="25.666666666666668"/>
+                                                <rect key="frame" x="72.666666666666657" y="0.0" width="30.666666666666671" height="25.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -331,7 +331,7 @@
                                             <constraint firstAttribute="height" constant="55" id="OXY-Y2-va6"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Sepete Ekle">
+                                        <buttonConfiguration key="configuration" style="filled" title="Add To Cart">
                                             <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
                                             <color key="baseBackgroundColor" red="0.94509803920000002" green="0.78039215689999997" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
@@ -378,7 +378,7 @@
             </objects>
             <point key="canvasLocation" x="92" y="-880"/>
         </scene>
-        <!--Favoriler-->
+        <!--Favorites-->
         <scene sceneID="pkY-JQ-opS">
             <objects>
                 <viewController id="ja9-PZ-JYx" customClass="FavoritesVC" customModule="Food_Delivery_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -444,8 +444,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favori ürününüz bulunmamaktadır." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZ5-0j-mLx">
-                                <rect key="frame" x="65.666666666666686" y="415.66666666666669" width="262" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have a favorite product." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZ5-0j-mLx">
+                                <rect key="frame" x="68.666666666666686" y="415.66666666666669" width="256" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -462,7 +462,7 @@
                             <constraint firstItem="uZ5-0j-mLx" firstAttribute="centerX" secondItem="HeI-jT-atf" secondAttribute="centerX" id="u3I-9S-FYt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Favoriler" id="7rb-PC-toR"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="7rb-PC-toR"/>
                     <connections>
                         <outlet property="anyFavoritesInfoLabel" destination="uZ5-0j-mLx" id="D0a-0o-efk"/>
                         <outlet property="favoritesTableView" destination="6HJ-VR-amx" id="0bj-LA-obN"/>
@@ -520,7 +520,7 @@
             </objects>
             <point key="canvasLocation" x="-2673" y="-168"/>
         </scene>
-        <!--Sepetim-->
+        <!--Cart-->
         <scene sceneID="Pek-Wj-vfa">
             <objects>
                 <viewController id="WAX-S1-iKd" customClass="BasketsVC" customModule="Food_Delivery_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -587,7 +587,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sepetinizde Ürün Bulunmuyor." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xt1-kY-pMf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your cart is empty." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xt1-kY-pMf">
                                 <rect key="frame" x="0.0" y="404" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -604,8 +604,8 @@
                             <constraint firstItem="mQJ-rQ-bv5" firstAttribute="top" secondItem="eg8-kn-0Bk" secondAttribute="top" constant="20" id="kAO-y6-QQy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sepetim" image="basket" catalog="system" id="hDg-sa-3BR"/>
-                    <navigationItem key="navigationItem" title="Sepetim" id="7oe-mW-dTF"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="basket" catalog="system" id="hDg-sa-3BR"/>
+                    <navigationItem key="navigationItem" title="Cart" id="7oe-mW-dTF"/>
                     <connections>
                         <outlet property="basketTableView" destination="mQJ-rQ-bv5" id="fuY-fr-CCC"/>
                         <outlet property="productInfoLabel" destination="Xt1-kY-pMf" id="yu5-sL-B80"/>
@@ -615,7 +615,7 @@
             </objects>
             <point key="canvasLocation" x="-721" y="568"/>
         </scene>
-        <!--Ayarlar-->
+        <!--Settings-->
         <scene sceneID="gqf-Tt-6F6">
             <objects>
                 <viewController id="OnC-6Z-ME8" customClass="SettingsVC" customModule="Food_Delivery_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -625,17 +625,17 @@
                         <viewLayoutGuide key="safeArea" id="cx9-GY-hrC"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ayarlar" image="gearshape" catalog="system" id="xjh-F9-bN0"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="xjh-F9-bN0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5g-Fa-aTB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2674" y="568"/>
         </scene>
-        <!--Keşfet-->
+        <!--Home-->
         <scene sceneID="ACu-6f-XWp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PA6-zO-hHs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Keşfet" image="house" catalog="system" id="dHo-L2-cxp">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="dHo-L2-cxp">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -664,11 +664,11 @@
             </objects>
             <point key="canvasLocation" x="-1628" y="-880"/>
         </scene>
-        <!--Favoriler-->
+        <!--Favorites-->
         <scene sceneID="Zrx-eX-V96">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ttf-d3-q2D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favoriler" image="heart" catalog="system" id="O5o-tP-6yi">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" id="O5o-tP-6yi">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
