@@ -16,7 +16,7 @@ class DiscoverVC: UIViewController {
     var yemekler = [Yemekler]() {
         didSet {
             yemeklerCollectionView.reloadData()
-            viewModel.tamListe = yemekler
+            viewModel.fullList = yemekler
         }
     }
     var viewModel = DiscoverViewModel()
@@ -88,8 +88,8 @@ extension DiscoverVC: UISearchBarDelegate {
                 self.yemekler = yemekler!
             }
         }else {
-            print(viewModel.ara(aramaKelimesi: searchText))
-            self.yemekler = viewModel.ara(aramaKelimesi: searchText)
+            print(viewModel.search(searchWords: searchText))
+            self.yemekler = viewModel.search(searchWords: searchText)
         }
     }
 }

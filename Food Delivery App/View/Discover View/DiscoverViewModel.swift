@@ -10,15 +10,15 @@ import Alamofire
 
 class DiscoverViewModel {
     
-    var tamListe = [Yemekler]()
+    var fullList = [Yemekler]()
     
-    func ara(aramaKelimesi: String) -> [Yemekler] {
-        var aramaListesi = [Yemekler]()
-        aramaListesi = tamListe.filter({
-            $0.yemek_adi!.lowercased().contains(aramaKelimesi.lowercased())
+    func search(searchWords: String) -> [Yemekler] {
+        var searchList = [Yemekler]()
+        searchList = fullList.filter({
+            $0.yemek_adi!.lowercased().contains(searchWords.lowercased())
             
         })
-        return aramaListesi
+        return searchList
     }
     func yemekleriGetir(completion: @escaping([Yemekler]? )-> Void ) {
         AF.request("http://kasimadalan.pe.hu/yemekler/tumYemekleriGetir.php",method: .get).response { response in
