@@ -108,7 +108,6 @@ class SettingsVC: UIViewController {
             make.height.equalTo(55)
         }
     }
-    
     @objc private func privacyPolicyTapped() {
         self.goURL(URL(string: "https://www.anilsezer.dev")!)
     }
@@ -124,6 +123,8 @@ class SettingsVC: UIViewController {
     @objc private func signOutButtonTapped() {
         do {
             try auth.signOut()
+            let vc = OnboardingVC()
+            navigationController?.pushViewController(vc, animated: true)
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }

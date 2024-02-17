@@ -35,6 +35,9 @@ class CartVC: UIViewController {
             make.height.equalTo(50)
             make.left.right.equalToSuperview().inset(20)
         }
+        productInfoLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

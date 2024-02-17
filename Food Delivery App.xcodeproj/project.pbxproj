@@ -229,7 +229,7 @@
 				5A79D5392AD6C80F00C83B06 /* Settings View */,
 				5A79D5362AD6C7B300C83B06 /* Cart View */,
 				5AA3B4092B0E31180001F402 /* Login View */,
-				5AA3B40A2B0E314A0001F402 /* SingUp View */,
+				5AA3B40A2B0E314A0001F402 /* SignUp View */,
 				5AFCA1182B3C413900C1B01D /* Onboarding View */,
 				5AFD594A2B69336B00C65040 /* ForgotPassword View */,
 			);
@@ -283,13 +283,13 @@
 			path = "Login View";
 			sourceTree = "<group>";
 		};
-		5AA3B40A2B0E314A0001F402 /* SingUp View */ = {
+		5AA3B40A2B0E314A0001F402 /* SignUp View */ = {
 			isa = PBXGroup;
 			children = (
 				5AA3B40D2B0E32B00001F402 /* SignUpVC.swift */,
 				5AA3B4112B0E32FB0001F402 /* SignUpViewModel.swift */,
 			);
-			path = "SingUp View";
+			path = "SignUp View";
 			sourceTree = "<group>";
 		};
 		5AFCA1182B3C413900C1B01D /* Onboarding View */ = {

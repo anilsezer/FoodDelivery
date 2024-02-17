@@ -16,6 +16,9 @@ class OnboardingVC: UIViewController {
         createUI()
     }
     private func createUI() {
+        
+        view.backgroundColor = .white
+        
         let mainImage = UIImageView(image: UIImage(named: "Onboarding"))
         view.addSubview(mainImage)
         mainImage.snp.makeConstraints { make in
