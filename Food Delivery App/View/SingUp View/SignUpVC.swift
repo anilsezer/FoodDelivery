@@ -1,5 +1,5 @@
 //
-//  SingUpVC.swift
+//  SignUpVC.swift
 //  Food Delivery App
 //
 //  Created by Anıl Sezer on 22.11.2023.

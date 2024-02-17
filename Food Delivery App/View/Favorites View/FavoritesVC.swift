@@ -8,7 +8,7 @@
 import UIKit
 
 class FavoritesVC: UIViewController {
-
+    
     let viewModel = FavoritesViewModel()
     
     @IBOutlet weak var anyFavoritesInfoLabel: UILabel!
@@ -20,14 +20,13 @@ class FavoritesVC: UIViewController {
         
         favoritesTableView.dataSource = self
         favoritesTableView.delegate = self
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         favoritesTableView.reloadData()
         isFavoritesEmty()
     }
-    func isFavoritesEmty() {
+    private func isFavoritesEmty() {
         anyFavoritesInfoLabel.isHidden = viewModel.fetchFavorites().isEmpty ? false : true
     }
 }
@@ -53,14 +52,14 @@ extension FavoritesVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .destructive, title: "Sil") { (action, view, completion) in
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
             let food = self.viewModel.fetchFavorites()[indexPath.row]
-            let alert = UIAlertController(title: "Emin misin", message: "\(food.yemek_adi!) silinsin mi?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Are You Sure!", message: "\(food.yemek_adi!) will delete?", preferredStyle: .alert)
             
-            let cancelAction = UIAlertAction(title: "İptal", style: .cancel)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
             alert.addAction(cancelAction)
             
-            let deleteAction = UIAlertAction(title: "Evet", style: .destructive) { _ in
+            let deleteAction = UIAlertAction(title: "Yes", style: .destructive) { _ in
                 self.viewModel.deleteFavorite(food)
                 self.favoritesTableView.reloadData()
                 self.isFavoritesEmty()

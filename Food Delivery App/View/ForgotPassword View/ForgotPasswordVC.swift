@@ -20,7 +20,6 @@ class ForgotPasswordVC: UIViewController {
         
         createUI()
         setupBindings()
-        
     }
     
     private func createUI() {

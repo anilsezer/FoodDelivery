@@ -44,7 +44,7 @@ class SettingsVC: UIViewController {
         }
         
         let rateUsButton = UIButton()
-        rateUsButton.setTitle("Privacy Policy", for: .normal)
+        rateUsButton.setTitle("Rate Us", for: .normal)
         rateUsButton.layer.cornerRadius = 25
         rateUsButton.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
         rateUsButton.titleLabel?.font = UIFont(name: "Arial Bold", size: 22)
