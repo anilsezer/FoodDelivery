@@ -10,25 +10,25 @@ import Alamofire
 
 class DiscoverViewModel {
     
-    var tamListe = [Yemekler]()
+    var fullList = [Foods]()
     
-    func ara(aramaKelimesi: String) -> [Yemekler] {
-        var aramaListesi = [Yemekler]()
-        aramaListesi = tamListe.filter({
-            $0.yemek_adi!.lowercased().contains(aramaKelimesi.lowercased())
-            
+    func search(searchWords: String) -> [Foods] {
+        var searchList = [Foods]()
+        searchList = fullList.filter({
+            $0.yemek_adi!.lowercased().contains(searchWords.lowercased())
         })
-        return aramaListesi
+        return searchList
     }
-    func yemekleriGetir(completion: @escaping([Yemekler]? )-> Void ) {
+    
+    func fetchFoods(completion: @escaping([Foods]? )-> Void ) {
         AF.request("http://kasimadalan.pe.hu/yemekler/tumYemekleriGetir.php",method: .get).response { response in
             if let data = response.data {
                 do {
-                    let cevap = try JSONDecoder().decode(YemeklerCevap.self, from: data)
-                    var liste = [Yemekler]()
-                    if let yemekListesi = cevap.yemekler {
-                        completion(yemekListesi)
-                        liste = yemekListesi
+                    let cevap = try JSONDecoder().decode(FoodsResponse.self, from: data)
+                    var liste = [Foods]()
+                    if let foodsLists = cevap.yemekler {
+                        completion(foodsLists)
+                        liste = foodsLists
                     }
                 } catch {
                     print(error.localizedDescription)

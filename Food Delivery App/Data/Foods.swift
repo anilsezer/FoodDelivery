@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Yemekler : Codable  {
+class Foods : Codable  {
     var yemek_id : String?
     var yemek_adi : String?
     var yemek_resim_adi : String?
@@ -19,5 +19,4 @@ class Yemekler : Codable  {
         self.yemek_resim_adi = yemek_resim_adi
         self.yemek_fiyat = yemek_fiyat
     }
-    
 }

@@ -13,10 +13,10 @@ class DiscoverVC: UIViewController {
     @IBOutlet weak var yemeklerCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var yemekler = [Yemekler]() {
+    var yemekler = [Foods]() {
         didSet {
             yemeklerCollectionView.reloadData()
-            viewModel.tamListe = yemekler
+            viewModel.fullList = yemekler
         }
     }
     var viewModel = DiscoverViewModel()
@@ -35,16 +35,15 @@ class DiscoverVC: UIViewController {
         
         yemeklerCollectionView.collectionViewLayout = layout
         searchBar.delegate = self
-        
     }
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.yemekleriGetir { yemekler in
+        viewModel.fetchFoods { yemekler in
             self.yemekler = yemekler!
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailPage" {
-            if let yemek = sender as? Yemekler {
+            if let yemek = sender as? Foods {
                 let destinationVC = segue.destination as! DetailPageVC
                 destinationVC.yemek = yemek
             }
@@ -60,7 +59,7 @@ extension DiscoverVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let yemek = yemekler[indexPath.row]
         
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "YemeklerCollectionViewCell", for: indexPath) as! YemeklerCollectionViewCell
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "YemeklerCollectionViewCell", for: indexPath) as! FoodsCollectionViewCell
         cell.foodName.text = yemek.yemek_adi
         cell.foodPrice.text = "\(yemek.yemek_fiyat!) ₺"
         cell.foodImage.backgroundColor = .white
@@ -84,12 +83,12 @@ extension DiscoverVC: UICollectionViewDelegate, UICollectionViewDataSource {
 extension DiscoverVC: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            viewModel.yemekleriGetir { yemekler in
+            viewModel.fetchFoods { yemekler in
                 self.yemekler = yemekler!
             }
         }else {
-            print(viewModel.ara(aramaKelimesi: searchText))
-            self.yemekler = viewModel.ara(aramaKelimesi: searchText)
+            print(viewModel.search(searchWords: searchText))
+            self.yemekler = viewModel.search(searchWords: searchText)
         }
     }
 }

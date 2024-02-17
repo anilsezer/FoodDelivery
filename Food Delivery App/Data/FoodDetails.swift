@@ -1,5 +1,5 @@
 //
-//  YemeklerDetay.swift
+//  FoodDetails.swift
 //  Food Delivery App
 //
 //  Created by Anıl Sezer on 16.10.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class YemeklerDetay : Codable {
+class FoodDetails : Codable {
     
     var sepet_yemek_id : String?
     var yemek_adi : String?
@@ -15,7 +15,6 @@ class YemeklerDetay : Codable {
     var yemek_fiyat : String?
     var yemek_siparis_adet  : String?
     var kullanici_adi : String?
-    
     
     init(sepet_yemek_id: String, yemek_adi: String, yemek_resim_adi: String, yemek_fiyat: String, yemek_siparis_adet: String, kullanici_adi: String) {
         self.sepet_yemek_id = sepet_yemek_id

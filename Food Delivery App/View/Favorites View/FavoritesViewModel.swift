@@ -10,11 +10,11 @@ import CoreData
 import UIKit
 
 class FavoritesViewModel {
-    func fetchFavorites() -> [Yemekler] {
+    func fetchFavorites() -> [Foods] {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let context = delegate.persistentContainer.viewContext
         let fetchrequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorites")
-        var yemekArr = [Yemekler]()
+        var yemekArr = [Foods]()
         fetchrequest.returnsObjectsAsFaults = false
         do {
             let results =  try context.fetch(fetchrequest)
@@ -25,7 +25,7 @@ class FavoritesViewModel {
                 let id = result.value(forKey: "id") as! String
                 let image = result.value(forKey: "image") as! String
                 
-                let newYemek = Yemekler(yemek_id: id, yemek_adi: name, yemek_resim_adi: image, yemek_fiyat: price)
+                let newYemek = Foods(yemek_id: id, yemek_adi: name, yemek_resim_adi: image, yemek_fiyat: price)
                 yemekArr.append(newYemek)
             }
         } catch  {
@@ -34,14 +34,14 @@ class FavoritesViewModel {
         return yemekArr
     }
     
-    func deleteFavorite(_ yemek: Yemekler) -> [Yemekler] {
+    func deleteFavorite(_ yemek: Foods) -> [Foods] {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let context = delegate.persistentContainer.viewContext
         let fetchrequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorites")
         
         fetchrequest.predicate = NSPredicate(format: "id == %@", yemek.yemek_id!)
         fetchrequest.returnsObjectsAsFaults = false
-        var yemekArr = [Yemekler]()
+        var yemekArr = [Foods]()
         
         do {
             let results = try context.fetch(fetchrequest)
@@ -49,14 +49,10 @@ class FavoritesViewModel {
                 if let objectToDelete = result as? NSManagedObject {
                     context.delete(objectToDelete)
                 }
-                
             }
-            
             try context.save()
         } catch  {
-            
         }
         return fetchFavorites()
-        
     }
 }

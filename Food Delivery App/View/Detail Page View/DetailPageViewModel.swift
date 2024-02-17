@@ -12,9 +12,9 @@ import UIKit
 
 class DetailPageViewModel {
     
-    var sepetYemekListesi = [YemeklerDetay]()
+    var foodsListInCart = [FoodDetails]()
     
-    func addToFavorites(_ yemek: Yemekler) {
+    func addToFavorites(_ yemek: Foods) {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         let context = delegate.persistentContainer.viewContext
         let fetchrequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorites")
@@ -40,7 +40,7 @@ class DetailPageViewModel {
         }
     }
     
-    func sepeteEkleTapped(yemek_adi: String, yemek_resim_adi: String, yemek_fiyat: String, yemek_siparis_adet: Int, kullanici_adi: String) {
+    func addToCartTapped(yemek_adi: String, yemek_resim_adi: String, yemek_fiyat: String, yemek_siparis_adet: Int, kullanici_adi: String) {
         let params: Parameters = ["yemek_adi": yemek_adi, "yemek_resim_adi": yemek_resim_adi, "yemek_fiyat": yemek_fiyat, "yemek_siparis_adet": yemek_siparis_adet, "kullanici_adi": kullanici_adi]
         
         AF.request("http://kasimadalan.pe.hu/yemekler/sepeteYemekEkle.php", method: .post, parameters: params).response { response in
@@ -55,16 +55,16 @@ class DetailPageViewModel {
         }
     }
     
-    func sepetiGetir(kullaniciAdi: String, completion: @escaping () -> Void) {
+    func fetchFoods(kullaniciAdi: String, completion: @escaping () -> Void) {
         let params: Parameters = ["kullanici_adi": kullaniciAdi]
         AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php", method: .post, parameters: params).response { response in
             
             if let data = response.data {
                 do {
-                    let response = try JSONDecoder().decode(YemeklerDetayCevap.self, from: data)
+                    let response = try JSONDecoder().decode(FoodDetailsResponse.self, from: data)
                     if let list = response.sepet_yemekler {
                         DispatchQueue.main.async {
-                            self.sepetYemekListesi = list
+                            self.foodsListInCart = list
                             completion()
                         }
                     }
@@ -75,7 +75,7 @@ class DetailPageViewModel {
             }
         }
     }
-    func yemegiSil(sepet_yemek_id: Int, kullanici_adi: String) {
+    func deleteFoods(sepet_yemek_id: Int, kullanici_adi: String) {
         let params : Parameters = ["sepet_yemek_id" : sepet_yemek_id, "kullanici_adi" : kullanici_adi]
         AF.request("http://kasimadalan.pe.hu/yemekler/sepettenYemekSil.php", method: .post, parameters: params).response { response in
             if let data = response.data {

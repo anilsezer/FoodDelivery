@@ -7,15 +7,11 @@
 
 import UIKit
 import SnapKit
+import Firebase
 
 class SettingsVC: UIViewController {
     
-    let titleLabel = UILabel()
-    let privacyButton = UIButton()
-    let restorePurchase = UIButton()
-    let termOfUse = UIButton()
-    let rateUsButton = UIButton()
-    let contactUsButton = UIButton()
+    let auth = Auth.auth()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +20,8 @@ class SettingsVC: UIViewController {
     
     private func createUI() {
         
-        titleLabel.text = "Ayarlar"
+        let titleLabel = UILabel()
+        titleLabel.text = "Settings"
         titleLabel.font = UIFont(name: "Arial Bold", size: 18)
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
@@ -33,6 +30,7 @@ class SettingsVC: UIViewController {
             make.height.equalTo(40)
         }
         
+        let contactUsButton = UIButton()
         contactUsButton.setTitle("Contact Us", for: .normal)
         contactUsButton.layer.cornerRadius = 25
         contactUsButton.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
@@ -45,7 +43,8 @@ class SettingsVC: UIViewController {
             make.height.equalTo(55)
         }
         
-        rateUsButton.setTitle("Privacy Policy", for: .normal)
+        let rateUsButton = UIButton()
+        rateUsButton.setTitle("Rate Us", for: .normal)
         rateUsButton.layer.cornerRadius = 25
         rateUsButton.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
         rateUsButton.titleLabel?.font = UIFont(name: "Arial Bold", size: 22)
@@ -57,6 +56,7 @@ class SettingsVC: UIViewController {
             make.height.equalTo(55)
         }
         
+        let privacyButton = UIButton()
         privacyButton.setTitle("Privacy Policy", for: .normal)
         privacyButton.layer.cornerRadius = 25
         privacyButton.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
@@ -69,6 +69,7 @@ class SettingsVC: UIViewController {
             make.height.equalTo(55)
         }
         
+        let restorePurchase = UIButton()
         restorePurchase.setTitle("Restore Purchases", for: .normal)
         restorePurchase.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
         restorePurchase.titleLabel?.font = UIFont(name: "Arial Bold", size: 22)
@@ -81,6 +82,7 @@ class SettingsVC: UIViewController {
             make.height.equalTo(55)
         }
         
+        let termOfUse = UIButton()
         termOfUse.setTitle("Terms of Use", for: .normal)
         termOfUse.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
         termOfUse.titleLabel?.font = UIFont(name: "Arial Bold", size: 22)
@@ -92,8 +94,20 @@ class SettingsVC: UIViewController {
             make.left.right.equalToSuperview().inset(32)
             make.height.equalTo(55)
         }
+        
+        let signOutButton = UIButton()
+        signOutButton.setTitle("Sign Out", for: .normal)
+        signOutButton.backgroundColor = #colorLiteral(red: 0.9450980392, green: 0.7803921569, blue: 0.1921568627, alpha: 1)
+        signOutButton.titleLabel?.font = UIFont(name: "Arial Bold", size: 22)
+        signOutButton.layer.cornerRadius = 25
+        signOutButton.addTarget(self, action: #selector(signOutButtonTapped), for: .touchUpInside)
+        view.addSubview(signOutButton)
+        signOutButton.snp.makeConstraints { make in
+            make.top.equalTo(termOfUse.snp.bottom).offset(16)
+            make.left.right.equalToSuperview().inset(32)
+            make.height.equalTo(55)
+        }
     }
-    
     @objc private func privacyPolicyTapped() {
         self.goURL(URL(string: "https://www.anilsezer.dev")!)
     }
@@ -104,5 +118,15 @@ class SettingsVC: UIViewController {
     
     @objc private func restorePurchasesTapped() {
         self.goURL(URL(string: "https://www.anilsezer.dev")!)
+    }
+    
+    @objc private func signOutButtonTapped() {
+        do {
+            try auth.signOut()
+            let vc = OnboardingVC()
+            navigationController?.pushViewController(vc, animated: true)
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
     }
 }
